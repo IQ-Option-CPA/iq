@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Статистика</title>
+
+	<!-- Global stylesheets -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+	<link href="assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/core.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/components.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/colors.css" rel="stylesheet" type="text/css">
+	<!-- /global stylesheets -->
+
+	<!-- Core JS files -->
+	<script type="text/javascript" src="assets/js/plugins/loaders/pace.min.js"></script>
+	<script type="text/javascript" src="assets/js/core/libraries/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/js/core/libraries/bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/loaders/blockui.min.js"></script>
+
+	<!-- /core JS files -->
+	<!-- /theme JS files -->
+	<script type="text/javascript">
+
+		$(document).ready(function() {
+			$('img[src$=".svg"]').each(function() {
+				var $img = jQuery(this);
+				var imgURL = $img.attr('src');
+				var attributes = $img.prop("attributes");
+
+				$.get(imgURL, function(data) {
+					// Get the SVG tag, ignore the rest
+					var $svg = jQuery(data).find('svg');
+
+					// Remove any invalid XML tags
+					$svg = $svg.removeAttr('xmlns:a');
+
+					// Loop through IMG attributes and apply on SVG
+					$.each(attributes, function() {
+						$svg.attr(this.name, this.value);
+					});
+
+					// Replace IMG with SVG
+					$img.replaceWith($svg);
+				}, 'xml');
+			});
+		});
+
+	</script>
+	<!-- Theme JS files -->
+	<script type="text/javascript" src="assets/js/core/libraries/jasny_bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/selects/select2.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/selects/bootstrap_select.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/styling/uniform.min.js"></script>
+	<script type="text/javascript" src="assets/js/core/libraries/jquery_ui/core.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/selects/selectboxit.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/inputs/typeahead/typeahead.bundle.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/tags/tagsinput.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/tags/tokenfield.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/inputs/touchspin.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/inputs/maxlength.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/inputs/formatter.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/ui/moment/moment.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/pickers/daterangepicker.js"></script>
+	<script type="text/javascript" src="assets/js/core/libraries/jquery_ui/interactions.min.js"></script>
+	<script type="text/javascript" src="assets/js/pages/form_floating_labels.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/styling/switchery.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/ui/ripple.min.js"></script>
+
+	<script type="text/javascript" src="assets/js/plugins/forms/selects/select2.min.js"></script>
+	<script type="text/javascript" src="assets/js/pages/form_select2.js"></script>
+	<script type="text/javascript" src="assets/js/pages/jqueryui_forms.js"></script>
+	<script type="text/javascript" src="assets/js/core/libraries/jquery_ui/widgets.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/visualization/d3/d3.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/visualization/d3/d3_tooltip.js"></script>
+	<script type="text/javascript" src="assets/js/core/app.js"></script>
+	<script type="text/javascript" src="assets/js/pages/dashboard.js"></script>
+</head>
+
+<body class="statistic-page">
+
+	<!-- Main navbar -->
+	<div class="navbar navbar-default header-highlight">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="index.html"><img src="assets/images/svg/logotype__beta.svg" alt=""></a>
+
+			<ul class="nav navbar-nav visible-xs-block">
+				<li><a data-toggle="collapse" data-target="#navbar-mobile" style="background-color: transparent;"><i class="icon-tree5"></i></a></li>
+				<li><a class="sidebar-mobile-main-toggle"><i class="icon-paragraph-justify3"></i></a></li>
+			</ul>
+
+		</div>
+
+		<div class="navbar-collapse collapse" id="navbar-mobile">
+			<ul class="nav navbar-nav">
+				<li>
+					<a class="sidebar-control sidebar-main-toggle hidden-xs" style="background-color: transparent;">
+						<i class="icon-paragraph-justify3"></i>
+					</a>
+				</li>
+
+				<li class="dropdown language-switch">
+					<a class="dropdown-toggle" data-toggle="dropdown">
+						<img src="assets/images/flags/ru.png" class="position-left" alt="">
+						Русский
+						<span class="caret"></span>
+					</a>
+
+					<ul class="dropdown-menu">
+						<li><a class="russian"><img src="assets/images/flags/ru.png" alt=""> Русский</a></li>
+						<li><a class="english"><img src="assets/images/flags/gb.png" alt=""> English</a></li>
+					</ul>
+				</li>
+
+			</ul>
+
+			<div class="navbar-right">
+				<p class="navbar-text balance-title">Баланс:</p>
+				<p class="navbar-text balance-value">$1790.22</p>
+
+				<ul class="nav navbar-nav">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="icon-bell2"></i>
+							<span class="visible-xs-inline-block position-right">Обновления</span>
+							<span class="status-mark border-pink-300"></span>
+						</a>
+
+						<div class="dropdown-menu dropdown-content">
+							<div class="dropdown-content-heading">
+								Обновления
+								<ul class="icons-list">
+									<li><a href="#"><i class="icon-menu7"></i></a></li>
+								</ul>
+							</div>
+
+							<ul class="media-list dropdown-content-body width-350">
+
+								<li class="media">
+									<div class="media-left">
+										<a href="#" class="btn bg-danger-400 btn-rounded btn-icon btn-xs"><img src="assets/images/svg/icon__promo.svg"  class="svg social-link" /></a>
+									</div>
+
+									<div class="media-body">
+										<a href="#">Промо</a> добавлен новый перевод «Start trading» на испанском языке"
+										<div class="media-annotation">4 минуты назад</div>
+									</div>
+								</li>
+
+								<li class="media">
+									<div class="media-left">
+										<a href="#" class="btn bg-danger-400 btn-rounded btn-icon btn-xs"><img src="assets/images/svg/icon__promo.svg"  class="svg social-link" /></a>
+									</div>
+
+									<div class="media-body">
+										<a href="#">Промо</a> Промо добавлен пакет баннеров
+										<div class="media-annotation">36 минут назад</div>
+									</div>
+								</li>
+
+								<li class="media">
+									<div class="media-left">
+										<a href="#" class="btn bg-danger-400 btn-rounded btn-icon btn-xs"><img src="assets/images/svg/icon__news.svg" class="svg social-link" /></a>
+									</div>
+
+									<div class="media-body">
+										<a href="#">Новости</a> Новые прибыльные страны
+										<div class="media-annotation">2 часа назад</div>
+									</div>
+								</li>
+
+								<li class="media">
+									<div class="media-left">
+										<a href="offer.html" class="btn bg-danger-400 btn-rounded btn-icon btn-xs"><img src="assets/images/svg/icon__offer.svg" class="svg social-link" /></a>
+									</div>
+
+									<div class="media-body">
+										<a href="#">Офферы</a> Добалвены новые офферы CPI, CPL
+										<div class="media-annotation">1 Декабря, 18:01</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</li>
+
+					<li class="dropdown">
+
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="icon-bubble8"></i>
+							<span class="visible-xs-inline-block position-right">Сообщения</span>
+							<span class="status-mark border-pink-300"></span>
+						</a>
+
+						<div class="dropdown-menu dropdown-content dropdown-messages width-350">
+							<div class="dropdown-content-heading">
+								Сообщения
+								<ul class="icons-list">
+									<li><a href="#"><i class="icon-compose"></i></a></li>
+								</ul>
+							</div>
+
+							<ul class="media-list dropdown-content-body">
+
+
+								<li class="media">
+									<div class="media-left">
+										<span class="badge bg-danger-400 media-badge">5</span>
+										<img src="assets/images/manager__photo.png" class="img-circle img-sm" alt="">
+									</div>
+									<div class="media-body">
+										<a href="#" class="media-heading">
+											<span class="text-semibold">Артем Пачко</span>
+											<span class="media-annotation pull-right">12:16</span>
+										</a>
+
+										<span class="text-muted">Ваша следующая выплата будет отправлена вам</span>
+									</div>
+								</li>
+							</ul>
+
+							<div class="dropdown-content-footer">
+								<a href="#" data-popup="tooltip" title="All messages"><i class="icon-menu display-block"></i></a>
+							</div>
+						</div>
+					</li>
+					<li class="dropdown dropdown-user">
+						<a class="dropdown-toggle" data-toggle="dropdown">
+							<span class="dropdown__username">Дмитрий Зарецкий</span>
+							<i class="caret"></i>
+						</a>
+
+						<ul class="dropdown-menu dropdown-menu-right">
+							<li><a href="#"><i class="icon-user-plus"></i> Mой профиль</a></li>
+							<li class="divider"></li>
+							<li><a href="#"><i class="icon-cog5"></i> Настройки</a></li>
+							<li><a href="#"><i class="icon-switch2"></i> Выход</a></li>
+						</ul>
+					</li>
+				</ul>
+
+
+			</div>
+		</div>
+	</div>
+	<!-- /main navbar -->
+
+
+	<!-- Page container -->
+	<div class="page-container">
+
+		<!-- Page content -->
+		<div class="page-content">
+
+			<!-- Main sidebar -->
+			<div class="sidebar sidebar-main">
+				<div class="sidebar-content">
+
+					<!-- User menu -->
+					<div class="sidebar-user-material">
+						<div class="category-content">
+							<div class="sidebar-user-material-content">
+								<a href="#"><img src="assets/images/manager__photo.png" class="img-circle img-responsive" alt=""></a>
+								<h6>Артём Пачко</h6>
+								<span class="text-size-small">ваш персональный менеджер</span>
+								<span class="text-size-small-12"><img src="assets/images/svg/icon__skype.svg"> <a href="skype:cpa.iqoption?call">cpa.iqoption</a></span>
+							</div>
+						</div>
+
+					</div>
+					<!-- /user menu -->
+
+					<!-- Main navigation -->
+					<div class="sidebar-category sidebar-category-visible">
+						<div class="category-content no-padding">
+							<ul class="navigation navigation-main navigation-accordion">
+
+								<!-- Main -->
+
+								<li class="active"><a href="index.html" class="current"><i class="navigation__icon"><img src="assets/images/svg/icon__dashboard.svg" /></i> <span>Дашборд</span></a></li>
+								<li>
+									<a href="#">
+										<i class="navigation__icon"><img src="assets/images/svg/icon__statistic.svg" /></i>
+										<span>Статистика</span>
+									</a>
+									<ul>
+										<li><a href="#">За день</a></li>
+										<li><a href="#">Конверсии</a></li>
+										<li><a href="#">Офферы</a></li>
+										<li><a href="#">Браузеры</a></li>
+										<li><a href="#">ОС</a></li>
+										<li><a href="#">Устройства</a></li>
+										<li><a href="#">Страны</a></li>
+										<li><a href="#">Города</a></li>
+										<li><a href="#">Цели</a></li>
+										<li><a href="#">Рефералы</a></li>
+										<li class="navigation-divider"></li>
+										<li><a href="#">Субаккаунт #1</a></li>
+										<li><a href="#">Субаккаунт #2</a></li>
+										<li><a href="#">Субаккаунт #3</a></li>
+										<li><a href="#">Субаккаунт #4</a></li>
+										<li><a href="#">Субаккаунт #5</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="offer.html">
+										<i class="navigation__icon"><img src="assets/images/svg/icon__offer.svg" /></i>
+										<span>Офферы</span>
+									</a>
+									<ul>
+										<li><a href="offer.html" id="layout1">Активные</a></li>
+										<li><a href="offer.html" id="layout2">Доступные</a></li>
+										<li><a href="offer.html" id="layout3">Revshare Affiliate</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#">
+										<i class="navigation__icon"><img src="assets/images/svg/icon__promo.svg" /></i>
+										<span>Промо</span>
+									</a>
+									<ul>
+										<li><a href="#">Баннеры</a></li>
+										<li><a href="#">Видео</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#">
+										<i class="navigation__icon"><img src="assets/images/svg/icon__payments.svg" /></i>
+										<span>Выплаты</span>
+									</a>
+									<ul>
+										<li><a href="#">Настройки выплат</a></li>
+										<li><a href="#">История выплат</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#">
+										<i class="navigation__icon"><img src="assets/images/svg/icon__news.svg" /></i>
+										<span>Новости<span class="label label__news">1</span></span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<i class="navigation__icon"><img src="assets/images/svg/icon__support.svg" /></i>
+										<span>Поддержка</span>
+									</a>
+									<ul>
+										<li><a href="#">Написать в поддержку</a></li>
+										<li><a href="#">F.A.Q</a></li>
+									</ul>
+								</li>
+								<!-- /main -->
+
+							</ul>
+						</div>
+					</div>
+					<!-- /main navigation -->
+
+				</div>
+			</div>
+			<!-- /main sidebar -->
+
+
+			<!-- Main content -->
+			<div class="content-wrapper">
+
+				<!-- Page header -->
+				<div class="page-header">
+					<div class="page-header-content">
+						<div class="page-title">
+							<h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Статистика</span> - Офферы</h4>
+						</div>
+					</div>
+
+					<div class="breadcrumb-line breadcrumb-line-component">
+
+						<ul class="breadcrumb">
+							<li><a href="index.html"><i class="icon-home2 position-left"></i> Статистика</a></li>
+							<li class="active">Офферы</li>
+						</ul>
+
+					</div>
+				</div>
+				<!-- /page header -->
+
+
+				<!-- Content area -->
+				<div class="content">
+					<div class="table-responsive">
+						<div class="main-nav">
+							<ul class="nav nav-tabs nav-tabs-component">
+								<li class="active"><a href="#default-tab1" data-toggle="tab" class="legitRipple">За день</span></a></li>
+								<li><a href="#default-tab2" data-toggle="tab" class="legitRipple">Конверсии</a></li>
+								<li><a href="#default-tab3" data-toggle="tab" class="legitRipple">Офферы</a></li>
+								<li><a href="#default-tab4" data-toggle="tab" class="legitRipple">Браузеры</a></li>
+								<li><a href="#default-tab5" data-toggle="tab" class="legitRipple">ОС</a></li>
+								<li><a href="#default-tab6" data-toggle="tab" class="legitRipple">Устройства</a></li>
+								<li><a href="#default-tab7" data-toggle="tab" class="legitRipple">Страны</a></li>
+								<li><a href="#default-tab8" data-toggle="tab" class="legitRipple">Города</a></li>
+								<li><a href="#default-tab9" data-toggle="tab" class="legitRipple">Цели</a></li>
+								<li><a href="#default-tab10" data-toggle="tab" class="legitRipple">Рефералы</a></li>
+								<li><a href="#default-tab11" data-toggle="tab" class="legitRipple">Субак #1</a></li>
+								<li><a href="#default-tab12" data-toggle="tab" class="legitRipple">Субак #2</a></li>
+								<li><a href="#default-tab13" data-toggle="tab" class="legitRipple">Субак #3</a></li>
+								<li><a href="#default-tab14" data-toggle="tab" class="legitRipple">Субак #4</a></li>
+								<li><a href="#default-tab15" data-toggle="tab" class="legitRipple">Субак #5</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="panel panel-flat big-statistic">
+
+						<div class="row">
+							<div class="col-lg-4">
+								<div class="panel-heading heading-period">
+									<h6 class="panel-title">Укажите период</h6>
+								</div>
+
+								<div class="panel-body body-period">
+									<div class="row">
+										<div class="col-md-6">
+											<div class="input-group">
+												<span class="input-group-addon"><i class="icon-calendar"></i></span>
+												<input type="text" class="form-control datepicker" placeholder="Начиная">
+											</div>
+										</div>
+
+										<div class="col-md-6">
+											<div class="input-group">
+												<span class="input-group-addon"><i class="icon-calendar"></i></span>
+												<input type="text" class="form-control datepicker" placeholder="Заканчивая">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6">
+								<div class="panel-heading">
+									<h6 class="panel-title">Укажите оффер</h6>
+								</div>
+
+								<div class="panel-body static-multiselect">
+									<select name="select" multiple="multiple" class="select select-sm">
+										<option value="opt1" selected="selected">WEB CPA</option>
+										<option value="opt2" selected="selected">Android CPA</option>
+										<option value="opt3">Option 3</option>
+										<option value="opt4">Option 4</option>
+										<option value="opt5">Option 5</option>
+										<option value="opt6">Option 6</option>
+										<option value="opt7">Option 7</option>
+										<option value="opt8">Option 8</option>
+									</select>
+								</div>
+							</div>
+
+							<div class="col-lg-12">
+								<div class="form-group form-sub-accounts">
+										<div class="subaccaunt-container">
+											<div class="row">
+											<div class="col-md-2">
+												<span class="help-block">Субаккаунт 1</span>
+												<select name="select" multiple="multiple" class="select select-sm">
+													<option value="opt1">WEB CPA</option>
+													<option value="opt2">Android CPA</option>
+													<option value="opt3">Option 3</option>
+													<option value="opt4">Option 4</option>
+													<option value="opt5">Option 5</option>
+													<option value="opt6">Option 6</option>
+													<option value="opt7">Option 7</option>
+													<option value="opt8">Option 8</option>
+												</select>
+
+											</div>
+											<div class="col-md-2">
+												<span class="help-block">Субаккаунт 2</span>
+												<select name="select" multiple="multiple" class="select select-sm">
+													<option value="opt1">WEB CPA</option>
+													<option value="opt2">Android CPA</option>
+													<option value="opt3">Option 3</option>
+													<option value="opt4">Option 4</option>
+													<option value="opt5">Option 5</option>
+													<option value="opt6">Option 6</option>
+													<option value="opt7">Option 7</option>
+													<option value="opt8">Option 8</option>
+												</select>
+											</div>
+											<div class="col-md-2">
+												<span class="help-block">Субаккаунт 4</span>
+												<select name="select" multiple="multiple" class="select select-sm">
+													<option value="opt1">WEB CPA</option>
+													<option value="opt2">Android CPA</option>
+													<option value="opt3">Option 3</option>
+													<option value="opt4">Option 4</option>
+													<option value="opt5">Option 5</option>
+													<option value="opt6">Option 6</option>
+													<option value="opt7">Option 7</option>
+													<option value="opt8">Option 8</option>
+												</select>
+											</div>
+											<div class="col-md-2">
+												<span class="help-block">Субаккаунт 4</span>
+												<select name="select" multiple="multiple" class="select select-sm">
+													<option value="opt1">WEB CPA</option>
+													<option value="opt2">Android CPA</option>
+													<option value="opt3">Option 3</option>
+													<option value="opt4">Option 4</option>
+													<option value="opt5">Option 5</option>
+													<option value="opt6">Option 6</option>
+													<option value="opt7">Option 7</option>
+													<option value="opt8">Option 8</option>
+												</select>
+											</div>
+											<div class="col-md-2">
+												<span class="help-block">Субаккаунт 5</span>
+												<select name="select" multiple="multiple" class="select select-sm">
+													<option value="opt1">WEB CPA</option>
+													<option value="opt2">Android CPA</option>
+													<option value="opt3">Option 3</option>
+													<option value="opt4">Option 4</option>
+													<option value="opt5">Option 5</option>
+													<option value="opt6">Option 6</option>
+													<option value="opt7">Option 7</option>
+													<option value="opt8">Option 8</option>
+												</select>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-lg-10">
+								<div class="panel-padding">
+								<button type="submit" class="btn bg-orange-600 legitRipple to-right">Отфильтровать <span class="legitRipple-ripple"></span></button>
+								</div>
+							</div>
+							<div class="col-lg-12">
+
+								<div class="panel-heading heading-period table-title">
+									<h6 class="panel-title">Таблица статистики</h6>
+								</div>
+
+								<div class="table-responsive static-table">
+								<table class="table">
+									<thead>
+									<tr>
+										<th colspan="1" rowspan="2">Дата</th>
+										<th colspan="2">Трафик</th>
+										<th colspan="4">Конверсии</th>
+										<th colspan="1" rowspan="2">Ратио (CR)</th>
+										<th colspan="1" rowspan="2">EPC</th>
+										<th colspan="4">Финансы</th>
+									</tr>
+									<tr>
+
+										<th>Хосты</th>
+										<th>Хиты</th>
+										<th>Все</th>
+										<th>Принято</th>
+										<th>В обработке</th>
+										<th>Отклонено</th>
+										<th>Все</th>
+										<th>Принято</th>
+										<th>В обработке</th>
+										<th>Отклонено</th>
+									</tr>
+									</thead>
+									<tbody>
+									<tr>
+										<td><a href="#">2016-12-01</a></td>
+										<td>117</td>
+										<td>215</td>
+										<td>17</td>
+										<td>17</td>
+										<td>0</td>
+										<td>0</td>
+										<td>1:7 (14.53)</td>
+										<td>0.3082</td>
+										<td>36.06</td>
+										<td>36.06</td>
+										<td>0.00</td>
+										<td>0.00</td>
+									</tr>
+									<tr>
+										<td><a href="#">2016-12-01</a></td>
+										<td>117</td>
+										<td>215</td>
+										<td>17</td>
+										<td>17</td>
+										<td>0</td>
+										<td>0</td>
+										<td>1:7 (14.53)</td>
+										<td>0.3082</td>
+										<td>36.06</td>
+										<td>36.06</td>
+										<td>0.00</td>
+										<td>0.00</td>
+									</tr>
+									<tr>
+										<td class="text-orange-600">Итого</td>
+										<td>117</td>
+										<td>215</td>
+										<td>17</td>
+										<td>17</td>
+										<td>0</td>
+										<td>0</td>
+										<td>1:7 (14.53)</td>
+										<td>0.3082</td>
+										<td>36.06</td>
+										<td>36.06</td>
+										<td>0.00</td>
+										<td>0.00</td>
+									</tr>
+									</tbody>
+								</table>
+							</div>
+
+							</div>
+							<div class="col-lg-12">
+								<div class="panel-heading">
+									<div class="panel-padding">
+										<a href="#"><span class="label label-default text-white to-right"><i class="icon-file-excel text-white "></i> Скачать EXCEL</span></a>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-12">
+								<!-- Sales stats -->
+								<div class="panel-padding">
+									<div class="panel-heading">
+										<h6 class="panel-title">Статистика за неделю</h6>
+										<div class="heading-elements"  style="display: none;">
+											<form class="heading-form" action="#">
+												<div class="form-group">
+													<select class="change-date select-sm" id="select_date">
+														<optgroup label="<i class='icon-watch pull-right'></i> Time period">
+															<option value="val1">June, 29 - July, 5</option>
+															<option value="val2">June, 22 - June 28</option>
+															<option value="val3" selected="selected">June, 15 - June, 21</option>
+															<option value="val4">June, 8 - June, 14</option>
+														</optgroup>
+													</select>
+												</div>
+											</form>
+										</div>
+									</div>
+
+									<div class="container-fluid">
+										<div class="row text-center graph-header ">
+											<div class="col-md-1 col-md-offset-4">
+												<div class="content-group">
+													<img src="assets/images/graph__host__icon.png">
+													<span class="text-size-small">Хосты</span>
+												</div>
+											</div>
+
+											<div class="col-md-1">
+												<div class="content-group">
+													<img src="assets/images/graph__conv__icon.png">
+													<span class="text-size-small">Конверсии</span>
+												</div>
+											</div>
+
+											<div class="col-md-1">
+												<div class="content-group">
+													<img src="assets/images/graph__profit__icon.png">
+													<span class="text-size-small">Доход</span>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="content-group-sm" id="app_sales"></div>
+									<div class="position-relative" id="traffic-sources"></div>
+								</div>
+							</div>
+					</div>
+
+				</div>
+				<!-- /content area -->
+				</div>
+			</div>
+			<!-- /content wrapper -->
+
+		</div>
+		<!-- /page content -->
+
+	</div>
+	<!-- /page container -->
+	<div id="monthly-sales-stats"></div>
+	<div id="sales-heatmap"></div>
+	<div id="messages-stats"></div>
+	<div id="server-load"  style="display: none;"></div>
+	<div id="today-revenue"  style="display: none;"></div>
+	<div id="members-online" style="display: none;"></div>
+
+
+</body>
+</html>

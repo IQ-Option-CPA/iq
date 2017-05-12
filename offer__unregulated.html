@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Оффер</title>
+
+
+	<!-- Global stylesheets -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+	<link href="assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/core.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/components.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/colors.css" rel="stylesheet" type="text/css">
+	<!-- /global stylesheets -->
+
+	<!-- Core JS files -->
+	<script type="text/javascript" src="assets/js/plugins/loaders/pace.min.js"></script>
+	<script type="text/javascript" src="assets/js/core/libraries/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/js/core/libraries/bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/loaders/blockui.min.js"></script>
+	<!-- /core JS files -->
+	<script type="text/javascript">
+
+		$(document).ready(function() {
+			$('img[src$=".svg"]').each(function() {
+				var $img = jQuery(this);
+				var imgURL = $img.attr('src');
+				var attributes = $img.prop("attributes");
+
+				$.get(imgURL, function(data) {
+					// Get the SVG tag, ignore the rest
+					var $svg = jQuery(data).find('svg');
+
+					// Remove any invalid XML tags
+					$svg = $svg.removeAttr('xmlns:a');
+
+					// Loop through IMG attributes and apply on SVG
+					$.each(attributes, function() {
+						$svg.attr(this.name, this.value);
+					});
+
+					// Replace IMG with SVG
+					$img.replaceWith($svg);
+				}, 'xml');
+			});
+
+			$('.dropdown-offer a').click(function(e) {
+				e.preventDefault();
+
+				$(this).addClass('active').siblings('.bg-orange-800').removeClass('active');
+				var tab = $(this).data('tab');
+				$('.geo__' + tab).show().siblings('.geo').hide();
+			});
+
+			$('.geo__item:first-child').click(function(e) {
+				e.preventDefault();
+				$(this).parent().addClass('active').siblings().removeClass('active');
+			});
+
+		});
+
+	</script>
+	<!-- Theme JS files -->
+	<script type="text/javascript" src="assets/js/core/libraries/jquery_ui/interactions.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/styling/uniform.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/styling/switchery.min.js"></script>
+
+	<script type="text/javascript" src="assets/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/inputs/touchspin.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/uploaders/fileinput.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/editable/editable.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/extensions/contextmenu.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/visualization/sparkline.min.js"></script>
+	<script type="text/javascript" src="assets/js/core/app.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/styling/switchery.min.js"></script>
+	<script type="text/javascript" src="assets/js/pages/table_elements.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/selects/select2.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/selects/selectboxit.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/ui/ripple.min.js"></script>
+	<!-- /theme JS files -->
+
+
+
+</head>
+
+<body class="offer">
+
+	<!-- Main navbar -->
+	<div class="navbar navbar-default header-highlight">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="index.html"><img src="assets/images/svg/logotype__beta.svg" alt=""></a>
+
+			<ul class="nav navbar-nav visible-xs-block">
+				<li><a data-toggle="collapse" data-target="#navbar-mobile" style="background-color: transparent;"><i class="icon-tree5"></i></a></li>
+				<li><a class="sidebar-mobile-main-toggle"><i class="icon-paragraph-justify3"></i></a></li>
+			</ul>
+
+		</div>
+
+		<div class="navbar-collapse collapse" id="navbar-mobile">
+			<ul class="nav navbar-nav">
+				<li>
+					<a class="sidebar-control sidebar-main-toggle hidden-xs" style="background-color: transparent;">
+						<i class="icon-paragraph-justify3"></i>
+					</a>
+				</li>
+
+				<li class="dropdown language-switch">
+					<a class="dropdown-toggle" data-toggle="dropdown">
+						<img src="assets/images/flags/ru.png" class="position-left" alt="">
+						Русский
+						<span class="caret"></span>
+					</a>
+
+					<ul class="dropdown-menu">
+						<li><a class="russian"><img src="assets/images/flags/ru.png" alt=""> Русский</a></li>
+						<li><a class="english"><img src="assets/images/flags/gb.png" alt=""> English</a></li>
+					</ul>
+				</li>
+
+			</ul>
+
+			<div class="navbar-right">
+				<p class="navbar-text balance-title">Баланс:</p>
+				<p class="navbar-text balance-value">$1790.22</p>
+
+				<ul class="nav navbar-nav">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="icon-bell2"></i>
+							<span class="visible-xs-inline-block position-right">Обновления</span>
+							<span class="status-mark border-pink-300"></span>
+						</a>
+
+						<div class="dropdown-menu dropdown-content">
+							<div class="dropdown-content-heading">
+								Обновления
+								<ul class="icons-list">
+									<li><a href="#"><i class="icon-menu7"></i></a></li>
+								</ul>
+							</div>
+
+							<ul class="media-list dropdown-content-body width-350">
+
+								<li class="media">
+									<div class="media-left">
+										<a href="#" class="btn bg-danger-400 btn-rounded btn-icon btn-xs"><img src="assets/images/svg/icon__promo.svg" class="svg social-link" /></a>
+									</div>
+
+									<div class="media-body">
+										<a href="#">Промо</a> добавлен новый перевод «Start trading» на испанском языке"
+										<div class="media-annotation">4 минуты назад</div>
+									</div>
+								</li>
+
+								<li class="media">
+									<div class="media-left">
+										<a href="#" class="btn bg-danger-400 btn-rounded btn-icon btn-xs"><img src="assets/images/svg/icon__promo.svg" class="svg social-link" /></a>
+									</div>
+
+									<div class="media-body">
+										<a href="#">Промо</a> Промо добавлен пакет баннеров
+										<div class="media-annotation">36 минут назад</div>
+									</div>
+								</li>
+
+								<li class="media">
+									<div class="media-left">
+										<a href="#" class="btn bg-danger-400 btn-rounded btn-icon btn-xs"><img src="assets/images/svg/icon__news.svg" class="svg social-link" /></a>
+									</div>
+
+									<div class="media-body">
+										<a href="#">Новости</a> Новые прибыльные страны
+										<div class="media-annotation">2 часа назад</div>
+									</div>
+								</li>
+
+								<li class="media">
+									<div class="media-left">
+										<a href="#" class="btn bg-danger-400 btn-rounded btn-icon btn-xs"><img src="assets/images/svg/icon__offer.svg" class="svg social-link" /></a>
+									</div>
+
+									<div class="media-body">
+										<a href="#">Офферы</a> Добалвены новые офферы CPI, CPL
+										<div class="media-annotation">1 Декабря, 18:01</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</li>
+
+					<li class="dropdown">
+
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="icon-bubble8"></i>
+							<span class="visible-xs-inline-block position-right">Сообщения</span>
+							<span class="status-mark border-pink-300"></span>
+						</a>
+
+						<div class="dropdown-menu dropdown-content dropdown-messages width-350">
+							<div class="dropdown-content-heading">
+								Сообщения
+								<ul class="icons-list">
+									<li><a href="#"><i class="icon-compose"></i></a></li>
+								</ul>
+							</div>
+
+							<ul class="media-list dropdown-content-body">
+
+
+								<li class="media">
+									<div class="media-left">
+										<span class="badge bg-danger-400 media-badge">5</span>
+										<img src="assets/images/manager__photo.png" class="img-circle img-sm" alt="">
+									</div>
+									<div class="media-body">
+										<a href="#" class="media-heading">
+											<span class="text-semibold">Артем Пачко</span>
+											<span class="media-annotation pull-right">12:16</span>
+										</a>
+
+										<span class="text-muted">Ваша следующая выплата будет отправлена вам</span>
+									</div>
+								</li>
+							</ul>
+
+							<div class="dropdown-content-footer">
+								<a href="#" data-popup="tooltip" title="All messages"><i class="icon-menu display-block"></i></a>
+							</div>
+						</div>
+					</li>
+					<li class="dropdown dropdown-user">
+						<a class="dropdown-toggle" data-toggle="dropdown">
+							<span class="dropdown__username">Дмитрий Зарецкий</span>
+							<i class="caret"></i>
+						</a>
+
+						<ul class="dropdown-menu dropdown-menu-right">
+							<li><a href="#"><i class="icon-user-plus"></i> Mой профиль</a></li>
+							<li class="divider"></li>
+							<li><a href="#"><i class="icon-cog5"></i> Настройки</a></li>
+							<li><a href="#"><i class="icon-switch2"></i> Выход</a></li>
+						</ul>
+					</li>
+				</ul>
+
+
+			</div>
+		</div>
+	</div>
+	<!-- /main navbar -->
+
+
+	<!-- Page container -->
+	<div class="page-container">
+
+		<!-- Page content -->
+		<div class="page-content">
+
+			<!-- Main sidebar -->
+			<div class="sidebar sidebar-main">
+				<div class="sidebar-content">
+
+					<!-- User menu -->
+					<div class="sidebar-user-material">
+						<div class="category-content">
+							<div class="sidebar-user-material-content">
+								<a href="#"><img src="assets/images/manager__photo.png" class="img-circle img-responsive" alt=""></a>
+								<h6>Артём Пачко</h6>
+								<span class="text-size-small">ваш персональный менеджер</span>
+								<span class="text-size-small-12"><img src="assets/images/svg/icon__skype.svg"> <a href="skype:cpa.iqoption?call">cpa.iqoption</a></span>
+							</div>
+						</div>
+
+					</div>
+					<!-- /user menu -->
+
+					<!-- Main navigation -->
+					<div class="sidebar-category sidebar-category-visible">
+						<div class="category-content no-padding">
+							<ul class="navigation navigation-main navigation-accordion">
+
+								<!-- Main -->
+
+								<li class="active"><a href="index.html" class="current"><i class="navigation__icon"><img src="assets/images/svg/icon__dashboard.svg" /></i> <span>Дашборд</span></a></li>
+								<li>
+									<a href="#">
+										<i class="navigation__icon"><img src="assets/images/svg/icon__statistic.svg" /></i>
+										<span>Статистика</span>
+									</a>
+									<ul>
+										<li><a href="#">За день</a></li>
+										<li><a href="#">Конверсии</a></li>
+										<li><a href="#">Офферы</a></li>
+										<li><a href="#">Браузеры</a></li>
+										<li><a href="#">ОС</a></li>
+										<li><a href="#">Устройства</a></li>
+										<li><a href="#">Страны</a></li>
+										<li><a href="#">Города</a></li>
+										<li><a href="#">Цели</a></li>
+										<li><a href="#">Рефералы</a></li>
+										<li class="navigation-divider"></li>
+										<li><a href="#">Субаккаунт #1</a></li>
+										<li><a href="#">Субаккаунт #2</a></li>
+										<li><a href="#">Субаккаунт #3</a></li>
+										<li><a href="#">Субаккаунт #4</a></li>
+										<li><a href="#">Субаккаунт #5</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="offer.html">
+										<i class="navigation__icon"><img src="assets/images/svg/icon__offer.svg" /></i>
+										<span>Офферы</span>
+									</a>
+									<ul>
+										<li><a href="offer.html" id="layout1">Активные</a></li>
+										<li><a href="offer.html" id="layout2">Доступные</a></li>
+										<li><a href="offer.html" id="layout3">Revshare Affiliate</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#">
+										<i class="navigation__icon"><img src="assets/images/svg/icon__promo.svg" /></i>
+										<span>Промо</span>
+									</a>
+									<ul>
+										<li><a href="#">Баннеры</a></li>
+										<li><a href="#">Видео</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#">
+										<i class="navigation__icon"><img src="assets/images/svg/icon__payments.svg" /></i>
+										<span>Выплаты</span>
+									</a>
+									<ul>
+										<li><a href="#">Настройки выплат</a></li>
+										<li><a href="#">История выплат</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#">
+										<i class="navigation__icon"><img src="assets/images/svg/icon__news.svg" /></i>
+										<span>Новости<span class="label label__news">1</span></span>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<i class="navigation__icon"><img src="assets/images/svg/icon__support.svg" /></i>
+										<span>Поддержка</span>
+									</a>
+									<ul>
+										<li><a href="#">Написать в поддержку</a></li>
+										<li><a href="#">F.A.Q</a></li>
+									</ul>
+								</li>
+								<!-- /main -->
+
+							</ul>
+						</div>
+					</div>
+					<!-- /main navigation -->
+
+				</div>
+			</div>
+			<!-- /main sidebar -->
+
+
+			<!-- Main content -->
+			<div class="content-wrapper">
+
+				<!-- Page header -->
+				<div class="page-header">
+					<div class="page-header-content">
+						<div class="page-title">
+							<h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Оффер</span> - Активные</h4>
+						</div>
+					</div>
+
+					<div class="breadcrumb-line breadcrumb-line-component">
+						<ul class="breadcrumb">
+							<li><a href="index.html"><i class="icon-home2 position-left"></i> Дашборд</a></li>
+							<li><a href="table_basic.html"> Офферы</a></li>
+							<li><a href="table_basic.html"> Активные</a></li>
+							<li class="active"> CPA WEB</li>
+						</ul>
+					</div>
+				</div>
+				<!-- /page header -->
+
+				<!-- Content area -->
+				<div class="content">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="panel panel-flat">
+								<div class="panel-heading">
+									<h5 class="panel-title">WEB CPA [incent sources]</h5>
+									<div class="heading-elements">
+										<ul class="icons-list">
+											<li><a data-action="collapse"></a></li>
+											<li><a data-action="reload"></a></li>
+											<li><a data-action="close"></a></li>
+										</ul>
+									</div>
+								</div>
+
+								<div class="panel-body">
+									IQ Option pays for each installs made by your users. So you can get paid more for good quality traffic. To advertise applications please use only approves banner. All our banners must be approved by your account manager. For banner that violate the rules are introduced fines - deduction of payments for the period from 1 to 30 days!
+									<div class="form-group">
+
+											<div class="input-group input-group-top">
+												<span class="input-group-btn input-group-btn-copy">
+													<button class="btn btn-default btn-icon btn-copy" type="button"><i class="icon-copy4"></i></button>
+												</span>
+												<input type="text" class="form-control" value="http://track.cpa.iqoption.com/click?pid=38768&offer_id=30" disabled>
+												<span class="input-group-btn">
+													<button class="btn btn-default btn-copy btn-copy-right" type="button">Скопировать ссылку</button>
+												</span>
+											</div>
+
+									</div>
+									<legend class="text-bold">Субаккаунты</legend>
+									<div class="form-group form-sub-accounts">
+										<div class="col-md-2">
+											<input type="text" class="form-control control-sub">
+											<span class="help-block">Субаккаунт 1</span>
+										</div>
+										<div class="col-md-2">
+											<input type="text" class="form-control control-sub">
+											<span class="help-block">Субаккаунт 2</span>
+										</div>
+										<div class="col-md-2">
+											<input type="text" class="form-control control-sub">
+											<span class="help-block">Субаккаунт 3</span>
+										</div>
+										<div class="col-md-2">
+											<input type="text" class="form-control control-sub">
+											<span class="help-block">Субаккаунт 4</span>
+										</div>
+										<div class="col-md-2">
+											<input type="text" class="form-control control-sub">
+											<span class="help-block">Субаккаунт 5</span>
+										</div>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="panel panel-flat">
+								<div class="panel-heading">
+									<h5 class="panel-title">Лендинги</h5>
+									<div class="heading-elements">
+										<ul class="icons-list">
+											<li><a data-action="collapse"></a></li>
+											<li><a data-action="reload"></a></li>
+											<li><a data-action="close"></a></li>
+										</ul>
+									</div>
+								</div>
+
+
+									<div class="table-responsive">
+										<table class="table table-lands table-striped">
+											<thead>
+											<tr>
+												<th>Название</th>
+												<th class="lang">Язык</th>
+												<th class="open">Превью</th>
+											</tr>
+											</thead>
+											<tbody>
+											<tr>
+												<td>
+													<label class="radio-inline">
+														<div class="choice"><input type="radio" class="styled" name="orange-radio" checked="checked"></div>
+														Лендниг
+													</label>
+												</td>
+												<td class="lang">EN</td>
+												<td class="open"><a href="#"><span class="label bg-grey-400">Открыть</span></a></td>
+											</tr>
+											<tr>
+												<td>
+													<label class="radio-inline">
+														<div class="choice"><input type="radio" class="styled" name="orange-radio" checked="checked"></div>
+														Лендниг
+													</label>
+												</td>
+												<td class="lang">RU</td>
+												<td class="open"><a href="#"><span class="label bg-grey-400">Открыть</span></a></td>
+											</tr>
+											<tr>
+												<td>
+													<label class="radio-inline">
+														<div class="choice"><input type="radio" class="styled" name="orange-radio" checked="checked"></div>
+														Лендниг
+													</label>
+												</td>
+												<td class="lang">DE</td>
+												<td class="open"><a href="#"><span class="label bg-grey-400">Открыть</span></a></td>
+											</tr>
+											<tr>
+												<td>
+													<label class="radio-inline">
+														<div class="choice"><input type="radio" class="styled" name="orange-radio" checked="checked"></div>
+														Лендниг
+													</label>
+												</td>
+												<td class="lang">BR</td>
+												<td class="open"><a href="#"><span class="label bg-grey-400">Открыть</span></a></td>
+											</tr>
+											</tbody>
+										</table>
+									</div>
+							</div>
+
+							<div class="panel panel-flat">
+								<div class="panel-heading">
+									<h6 class="panel-title">Описание<a class="heading-elements-toggle"><i class="icon-more"></i></a></h6>
+									<div class="heading-elements">
+										<ul class="icons-list">
+											<li><a data-action="collapse"></a></li>
+											<li><a data-action="reload"></a></li>
+											<li><a data-action="close"></a></li>
+										</ul>
+									</div>
+								</div>
+
+								<div class="panel-body">
+									<p>IQ Option pays for each fisrt deal in real account after first deposit.To advertise applications please use only approves banner. Link for download – <a href='http://bit.ly/2f4zwyi'>http://bit.ly/2f4zwyi</a></p>
+									<p>Our video advertising for mobile applications is available here <a href='http://bit.ly/2f4zwyi'>https://vimeo.com/user53551169</a> or here <a href='http://bit.ly/2f4zwyi'>https://vimeo.com/iqoptiontrading.</a> All our banners must be approved by your account manager. For banner that violate the rules are introduced fines – deduction of payments for the period from 1 to 30 days!</p>
+									<p>Rules – <a href='http://bit.ly/2f4zwyi'>http://bit.ly/2dSfHaz</a></p>
+									<p>Have a good profit!</p>
+								</div>
+
+							</div>
+
+							<div class="row">
+								<div class="col-lg-12">
+									<div class="panel panel-flat">
+										<div class="panel-heading">
+											<h6 class="panel-title">География и оплачиваемые цели</h6>
+												<br />
+												<div class="tabbable">
+
+																<div class="geos dropdown-offer">
+																	<a class="bg-orange-800 active" data-tab="ios"><i class="icon-apple2"></i> IOS</a>
+																	<div id="geo_web" class="geo geo__web" style="display:block;">
+																		<div class="geo__list">
+																			<div class="geo__tbody">
+																				<div class="geo__row active">
+																					<div class="geo__item">
+																						<p class="geo__tier">Tier 1</p>
+																						<p class="geo__cost">130 USD</p>
+																						<p class="geo__arrow">→</p>
+																					</div>
+																					<div class="geo__item">
+																						<div class="geo__item_title non-regulated__title countries__title">Non-regulated</div>
+																						<div class="non-regulated__items countries__block">
+																							<span><img class="geo__flag" src="assets/images/flags/ch.png">CH</span>
+																							<span><img class="geo__flag" src="assets/images/flags/hk.png">HK</span>
+																							<span><img class="geo__flag" src="assets/images/flags/na.png">NA</span>
+																							<span><img class="geo__flag" src="assets/images/flags/sa.png">SA</span>
+																							<span><img class="geo__flag" src="assets/images/flags/sg.png">SG</span>
+																						</div>
+																					</div>
+																				</div>
+																				<div class="geo__row">
+																					<div class="geo__item">
+																						<p class="geo__tier">Tier 2</p>
+																						<p class="geo__cost">100 USD</p>
+																						<p class="geo__arrow">→</p>
+																					</div>
+																					<div class="geo__item">
+																						<div class="geo__item_title non-regulated__title countries__title">Non-regulated</div>
+																						<div class="non-regulated__items countries__block">
+																							<span><img class="geo__flag" src="assets/images/flags/ae.png">AE</span>
+																							<span><img class="geo__flag" src="assets/images/flags/bb.png">BB</span>
+																							<span><img class="geo__flag" src="assets/images/flags/cl.png">CL</span>
+																							<span><img class="geo__flag" src="assets/images/flags/kr.png">KR</span>
+																							<span><img class="geo__flag" src="assets/images/flags/kw.png">KW</span>
+																							<span><img class="geo__flag" src="assets/images/flags/my.png">MY</span>
+																							<span><img class="geo__flag" src="assets/images/flags/nz.png">NZ</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ph.png">PH</span>
+																							<span><img class="geo__flag" src="assets/images/flags/pk.png">PK</span>
+																							<span><img class="geo__flag" src="assets/images/flags/py.png">PY</span>
+																							<span><img class="geo__flag" src="assets/images/flags/qa.png">QA</span>
+																							<span><img class="geo__flag" src="assets/images/flags/sv.png">SV</span>
+																							<span><img class="geo__flag" src="assets/images/flags/th.png">TH</span>
+																							<span><img class="geo__flag" src="assets/images/flags/tw.png">TW</span>
+																						</div>
+																					</div>
+																				</div>
+																				<div class="geo__row">
+																					<div class="geo__item">
+																						<p class="geo__tier">Tier 3</p>
+																						<p class="geo__cost">70 USD</p>
+																						<p class="geo__arrow">→</p>
+																					</div>
+																					<div class="geo__item">
+																						<div class="geo__item_title non-regulated__title countries__title">Non-regulated</div>
+																						<div class="non-regulated__items countries__block">
+																							<span><img class="geo__flag" src="assets/images/flags/an.png">AN</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ar.png">AR</span>
+																							<span><img class="geo__flag" src="assets/images/flags/bh.png">BH</span>
+																							<span><img class="geo__flag" src="assets/images/flags/bn.png">BN</span>
+																							<span><img class="geo__flag" src="assets/images/flags/br.png">BR</span>
+																							<span><img class="geo__flag" src="assets/images/flags/bs.png">BS</span>
+																							<span><img class="geo__flag" src="assets/images/flags/eg.png">EG</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ht.png">HT</span>
+																							<span><img class="geo__flag" src="assets/images/flags/id.png">ID</span>
+																							<span><img class="geo__flag" src="assets/images/flags/in.png">IN</span>
+																							<span><img class="geo__flag" src="assets/images/flags/jm.png">JM</span>
+																							<span><img class="geo__flag" src="assets/images/flags/la.png">LA</span>
+																							<span><img class="geo__flag" src="assets/images/flags/lb.png">LB</span>
+																							<span><img class="geo__flag" src="assets/images/flags/lk.png">LK</span>
+																							<span><img class="geo__flag" src="assets/images/flags/me.png">ME</span>
+																							<span><img class="geo__flag" src="assets/images/flags/mk.png">MK</span>
+																							<span><img class="geo__flag" src="assets/images/flags/mm.png">MM</span>
+																							<span><img class="geo__flag" src="assets/images/flags/mu.png">MU</span>
+																							<span><img class="geo__flag" src="assets/images/flags/mv.png">MV</span>
+																							<span><img class="geo__flag" src="assets/images/flags/mx.png">MX</span>
+																							<span><img class="geo__flag" src="assets/images/flags/mz.png">MZ</span>
+																							<span><img class="geo__flag" src="assets/images/flags/om.png">OM</span>
+																							<span><img class="geo__flag" src="assets/images/flags/pa.png">PA</span>
+																							<span><img class="geo__flag" src="assets/images/flags/pe.png">PE</span>
+																							<span><img class="geo__flag" src="assets/images/flags/tt.png">TT</span>
+																							<span><img class="geo__flag" src="assets/images/flags/tz.png">TZ</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ve.png">VE</span>
+																							<span><img class="geo__flag" src="assets/images/flags/vn.png">VN</span>
+																							<span><img class="geo__flag" src="assets/images/flags/za.png">ZA</span>
+																						</div>
+																					</div>
+																				</div>
+																				<div class="geo__row">
+																					<div class="geo__item">
+																						<p class="geo__tier">Tier 4</p>
+																						<p class="geo__cost">30 USD</p>
+																						<p class="geo__arrow">→</p>
+																					</div>
+																					<div class="geo__item">
+																						<div class="geo__item_title non-regulated__title countries__title">Non-regulated</div>
+																						<div class="non-regulated__items countries__block">
+																							<span><img class="geo__flag" src="assets/images/flags/ad.png">AD</span>
+																							<span><img class="geo__flag" src="assets/images/flags/af.png">AF</span>
+																							<span><img class="geo__flag" src="assets/images/flags/al.png">AL</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ao.png">AO</span>
+																							<span><img class="geo__flag" src="assets/images/flags/aw.png">AW</span>
+																							<span><img class="geo__flag" src="assets/images/flags/az.png">AZ</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ba.png">BA</span>
+																							<span><img class="geo__flag" src="assets/images/flags/bd.png">BD</span>
+																							<span><img class="geo__flag" src="assets/images/flags/bm.png">BM</span>
+																							<span><img class="geo__flag" src="assets/images/flags/bo.png">BO</span>
+																							<span><img class="geo__flag" src="assets/images/flags/bw.png">BW</span>
+																							<span><img class="geo__flag" src="assets/images/flags/cm.png">CM</span>
+																							<span><img class="geo__flag" src="assets/images/flags/co.png">CO</span>
+																							<span><img class="geo__flag" src="assets/images/flags/cr.png">CR</span>
+																							<span><img class="geo__flag" src="assets/images/flags/dm.png">DM</span>
+																							<span><img class="geo__flag" src="assets/images/flags/do.png">DO</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ec.png">EC</span>
+																							<span><img class="geo__flag" src="assets/images/flags/gh.png">GH</span>
+																							<span><img class="geo__flag" src="assets/images/flags/gi.png">GI</span>
+																							<span><img class="geo__flag" src="assets/images/flags/gt.png">GT</span>
+																							<span><img class="geo__flag" src="assets/images/flags/gu.png">GU</span>
+																							<span><img class="geo__flag" src="assets/images/flags/iq.png">IQ</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ky.png">KY</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ma.png">MA</span>
+																							<span><img class="geo__flag" src="assets/images/flags/mc.png">MC</span>
+																							<span><img class="geo__flag" src="assets/images/flags/mq.png">MQ</span>
+																							<span><img class="geo__flag" src="assets/images/flags/na.png">NA</span>
+																							<span><img class="geo__flag" src="assets/images/flags/nc.png">NC</span>
+																							<span><img class="geo__flag" src="assets/images/flags/nh.png">NH</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ng.png">NG</span>
+																							<span><img class="geo__flag" src="assets/images/flags/np.png">NP</span>
+																							<span><img class="geo__flag" src="assets/images/flags/pg.png">PG</span>
+																							<span><img class="geo__flag" src="assets/images/flags/rw.png">RW</span>
+																							<span><img class="geo__flag" src="assets/images/flags/so.png">SO</span>
+																							<span><img class="geo__flag" src="assets/images/flags/sr.png">SR</span>
+																							<span><img class="geo__flag" src="assets/images/flags/sz.png">SZ</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ug.png">UG</span>
+																							<span><img class="geo__flag" src="assets/images/flags/vg.png">VG</span>
+																						</div>
+																					</div>
+																				</div>
+																				<div class="geo__row">
+																					<div class="geo__item">
+																						<p class="geo__tier">Tier 5</p>
+																						<p class="geo__cost">17 USD</p>
+																						<p class="geo__arrow">→</p>
+																					</div>
+																					<div class="geo__item">
+																						<div class="geo__item_title non-regulated__title countries__title">Non-regulated</div>
+																						<div class="non-regulated__items countries__block">
+																							<span><img class="geo__flag" src="assets/images/flags/ag.png">AG</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ai.png">AI</span>
+																							<span><img class="geo__flag" src="assets/images/flags/am.png">AM</span>
+																							<span><img class="geo__flag" src="assets/images/flags/as.png">AS</span>
+																							<span><img class="geo__flag" src="assets/images/flags/bf.png">BF</span>
+																							<span><img class="geo__flag" src="assets/images/flags/bj.png">BJ</span>
+																							<span><img class="geo__flag" src="assets/images/flags/by.png">BY</span>
+																							<span><img class="geo__flag" src="assets/images/flags/bz.png">BZ</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ci.png">CI</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ck.png">CK</span>
+																							<span><img class="geo__flag" src="assets/images/flags/cv.png">CV</span>
+																							<span><img class="geo__flag" src="assets/images/flags/dj.png">DJ</span>
+																							<span><img class="geo__flag" src="assets/images/flags/dz.png">DZ</span>
+																							<span><img class="geo__flag" src="assets/images/flags/et.png">ET</span>
+																							<span><img class="geo__flag" src="assets/images/flags/fj.png">FJ</span>
+																							<span><img class="geo__flag" src="assets/images/flags/fo.png">FO</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ga.png">GA</span>
+																							<span><img class="geo__flag" src="assets/images/flags/gd.png">GD</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ge.png">GE</span>
+																							<span><img class="geo__flag" src="assets/images/flags/gf.png">GF</span>
+																							<span><img class="geo__flag" src="assets/images/flags/gm.png">GM</span>
+																							<span><img class="geo__flag" src="assets/images/flags/gn.png">GN</span>
+																							<span><img class="geo__flag" src="assets/images/flags/gp.png">GP</span>
+																							<span><img class="geo__flag" src="assets/images/flags/io.png">IO</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ke.png">KE</span>
+																							<span><img class="geo__flag" src="assets/images/flags/kg.png">KG</span>
+																							<span><img class="geo__flag" src="assets/images/flags/kn.png">KN</span>
+																							<span><img class="geo__flag" src="assets/images/flags/kz.png">KZ</span>
+																							<span><img class="geo__flag" src="assets/images/flags/lc.png">LC</span>
+																							<span><img class="geo__flag" src="assets/images/flags/lr.png">LR</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ls.png">LS</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ly.png">LY</span>
+																							<span><img class="geo__flag" src="assets/images/flags/md.png">MD</span>
+																							<span><img class="geo__flag" src="assets/images/flags/mg.png">MG</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ml.png">ML</span>
+																							<span><img class="geo__flag" src="assets/images/flags/mn.png">MN</span>
+																							<span><img class="geo__flag" src="assets/images/flags/mo.png">MO</span>
+																							<span><img class="geo__flag" src="assets/images/flags/mr.png">MR</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ne.png">NE</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ni.png">NI</span>
+																							<span><img class="geo__flag" src="assets/images/flags/pf.png">PF</span>
+																							<span><img class="geo__flag" src="assets/images/flags/rs.png">RS</span>
+																							<span><img class="geo__flag" src="assets/images/flags/sc.png">SC</span>
+																							<span><img class="geo__flag" src="assets/images/flags/sl.png">SL</span>
+																							<span><img class="geo__flag" src="assets/images/flags/sn.png">SN</span>
+																							<span><img class="geo__flag" src="assets/images/flags/so.png">SO</span>
+																							<span><img class="geo__flag" src="assets/images/flags/sy.png">SY</span>
+																							<span><img class="geo__flag" src="assets/images/flags/tc.png">TC</span>
+																							<span><img class="geo__flag" src="assets/images/flags/td.png">TD</span>
+																							<span><img class="geo__flag" src="assets/images/flags/tg.png">TG</span>
+																							<span><img class="geo__flag" src="assets/images/flags/tm.png">TM</span>
+																							<span><img class="geo__flag" src="assets/images/flags/tn.png">TN</span>
+																							<span><img class="geo__flag" src="assets/images/flags/to.png">TO</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ua.png">UA</span>
+																							<span><img class="geo__flag" src="assets/images/flags/uz.png">UZ</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ye.png">YE</span>
+																							<span><img class="geo__flag" src="assets/images/flags/zm.png">ZM</span>
+																							<span><img class="geo__flag" src="assets/images/flags/zw.png">ZW</span>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																		<div class="form-group form-group-bottom" id="get_link">
+																			<div class="group-flex">
+                                                <span class="input-group-btn input-group-btn1">
+
+															<button class="btn btn-default btn-icon btn-copy legitRipple" type="button">
+																<i class="icon-copy4"></i>
+															</button>
+
+															<input type="text" class="form-control" value="http://track.cpa.iqoption.com/click?pid=38768&amp;offer_id=30" disabled="">
+
+												</span>
+																				<span class="input-group-btn input-group-btn2 ">
+													<button class="btn btn-default btn-copy btn-copy-right legitRipple" type="button">Скопировать и запустить</button>
+													<button class="btn btn-default btn-copy-right legitRipple  bg-slate-800 " type="button">Настройки</button>
+												</span>
+																			</div>
+																		</div>
+																	</div>
+																	<a class="bg-orange-800" data-tab="android"><i class="icon-android"></i> Android</a>
+																	<div id="geo_ios" class="geo geo__ios" style="display: none;">
+																		<div class="geo__list">
+																			<div class="geo__tbody">
+																				<div class="geo__row active">
+																					<div class="geo__item">
+																						<p class="geo__tier">Tier 1</p>
+																						<p class="geo__cost">110 USD</p>
+																						<p class="geo__arrow">→</p>
+																					</div>
+																					<div class="geo__item">
+																						<div class="geo__item_title non-regulated__title countries__title">Non-regulated</div>
+																						<div class="non-regulated__items countries__block">
+																							<span><img class="geo__flag" src="assets/images/flags/ae.png">AE</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ch.png">CH</span>
+																							<span><img class="geo__flag" src="assets/images/flags/hk.png">HK</span>
+																							<span><img class="geo__flag" src="assets/images/flags/kw.png">KW</span>
+																							<span><img class="geo__flag" src="assets/images/flags/my.png">MY</span>
+																							<span><img class="geo__flag" src="assets/images/flags/qa.png">QA</span>
+																							<span><img class="geo__flag" src="assets/images/flags/sg.png">SG</span>
+																							<span><img class="geo__flag" src="assets/images/flags/th.png">TH</span>
+																							<span><img class="geo__flag" src="assets/images/flags/tw.png">TW</span>
+																						</div>
+																					</div>
+																				</div>
+																				<div class="geo__row">
+																					<div class="geo__item">
+																						<p class="geo__tier">Tier 2</p>
+																						<p class="geo__cost">70 USD</p>
+																						<p class="geo__arrow">→</p>
+																					</div>
+																					<div class="geo__item">
+																						<div class="geo__item_title non-regulated__title countries__title">Non-regulated</div>
+																						<div class="non-regulated__items countries__block">
+																							<span><img class="geo__flag" src="assets/images/flags/bn.png">BN</span>
+																							<span><img class="geo__flag" src="assets/images/flags/eg.png">EG</span>
+																							<span><img class="geo__flag" src="assets/images/flags/kr.png">KR</span>
+																							<span><img class="geo__flag" src="assets/images/flags/sa.png">SA</span>
+																							<span><img class="geo__flag" src="assets/images/flags/za.png">ZA</span>
+																						</div>
+																					</div>
+																				</div>
+																				<div class="geo__row">
+																					<div class="geo__item">
+																						<p class="geo__tier">Tier 3</p>
+																						<p class="geo__cost">50 USD</p>
+																						<p class="geo__arrow">→</p>
+																					</div>
+																					<div class="geo__item">
+																						<div class="geo__item_title non-regulated__title countries__title">Non-regulated</div>
+																						<div class="non-regulated__items countries__block">
+																							<span><img class="geo__flag" src="assets/images/flags/ar.png">AR</span>
+																							<span><img class="geo__flag" src="assets/images/flags/br.png">BR</span>
+																							<span><img class="geo__flag" src="assets/images/flags/co.png">CO</span>
+																							<span><img class="geo__flag" src="assets/images/flags/cr.png">CR</span>
+																							<span><img class="geo__flag" src="assets/images/flags/do.png">DO</span>
+																							<span><img class="geo__flag" src="assets/images/flags/id.png">ID</span>
+																							<span><img class="geo__flag" src="assets/images/flags/in.png">IN</span>
+																							<span><img class="geo__flag" src="assets/images/flags/kh.png">KH</span>
+																							<span><img class="geo__flag" src="assets/images/flags/lb.png">LB</span>
+																							<span><img class="geo__flag" src="assets/images/flags/lk.png">LK</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ma.png">MA</span>
+																							<span><img class="geo__flag" src="assets/images/flags/nz.png">NZ</span>
+																							<span><img class="geo__flag" src="assets/images/flags/pe.png">PE</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ph.png">PH</span>
+																							<span><img class="geo__flag" src="assets/images/flags/pk.png">PK</span>
+																						</div>
+																					</div>
+																				</div>
+																				<div class="geo__row">
+																					<div class="geo__item">
+																						<p class="geo__tier">Tier 4</p>
+																						<p class="geo__cost">25 USD</p>
+																						<p class="geo__arrow">→</p>
+																					</div>
+																					<div class="geo__item">
+																						<div class="geo__item_title non-regulated__title countries__title">Non-regulated</div>
+																						<div class="non-regulated__items countries__block">
+																							<span><img class="geo__flag" src="assets/images/flags/al.png">AL</span>
+																							<span><img class="geo__flag" src="assets/images/flags/am.png">AM</span>
+																							<span><img class="geo__flag" src="assets/images/flags/az.png">AZ</span>
+																							<span><img class="geo__flag" src="assets/images/flags/by.png">BY</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ec.png">EC</span>
+																							<span><img class="geo__flag" src="assets/images/flags/gh.png">GH</span>
+																							<span><img class="geo__flag" src="assets/images/flags/jm.png">JM</span>
+																							<span><img class="geo__flag" src="assets/images/flags/jo.png">JO</span>
+																							<span><img class="geo__flag" src="assets/images/flags/kz.png">KZ</span>
+																							<span><img class="geo__flag" src="assets/images/flags/md.png">MD</span>
+																							<span><img class="geo__flag" src="assets/images/flags/mx.png">MX</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ng.png">NG</span>
+																							<span><img class="geo__flag" src="assets/images/flags/om.png">OM</span>
+																							<span><img class="geo__flag" src="assets/images/flags/sl.png">SL</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ua.png">UA</span>
+																							<span><img class="geo__flag" src="assets/images/flags/uz.png">UZ</span>
+																						</div>
+																					</div>
+																				</div>
+																				<div class="geo__row">
+																					<div class="geo__item">
+																						<p class="geo__tier">Tier 5</p>
+																						<p class="geo__cost">14 USD</p>
+																						<p class="geo__arrow">→</p>
+																					</div>
+																					<div class="geo__item">
+																						<div class="geo__item_title non-regulated__title countries__title">Non-regulated</div>
+																						<div class="non-regulated__items countries__block">
+																							<span><img class="geo__flag" src="assets/images/flags/ad.png">AD</span>
+																							<span><img class="geo__flag" src="assets/images/flags/af.png">AF</span>
+																							<span><img class="geo__flag" src="assets/images/flags/an.png">AN</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ba.png">BA</span>
+																							<span><img class="geo__flag" src="assets/images/flags/bb.png">BB</span>
+																							<span><img class="geo__flag" src="assets/images/flags/bh.png">BH</span>
+																							<span><img class="geo__flag" src="assets/images/flags/bj.png">BJ</span>
+																							<span><img class="geo__flag" src="assets/images/flags/bo.png">BO</span>
+																							<span><img class="geo__flag" src="assets/images/flags/bs.png">BS</span>
+																							<span><img class="geo__flag" src="assets/images/flags/bw.png">BW</span>
+																							<span><img class="geo__flag" src="assets/images/flags/cd.png">CD</span>
+																							<span><img class="geo__flag" src="assets/images/flags/dm.png">DM</span>
+																							<span><img class="geo__flag" src="assets/images/flags/dz.png">DZ</span>
+																							<span><img class="geo__flag" src="assets/images/flags/fj.png">FJ</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ge.png">GE</span>
+																							<span><img class="geo__flag" src="assets/images/flags/gf.png">GF</span>
+																							<span><img class="geo__flag" src="assets/images/flags/gi.png">GI</span>
+																							<span><img class="geo__flag" src="assets/images/flags/gp.png">GP</span>
+																							<span><img class="geo__flag" src="assets/images/flags/gt.png">GT</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ke.png">KE</span>
+																							<span><img class="geo__flag" src="assets/images/flags/kg.png">KG</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ky.png">KY</span>
+																							<span><img class="geo__flag" src="assets/images/flags/la.png">LA</span>
+																							<span><img class="geo__flag" src="assets/images/flags/me.png">ME</span>
+																							<span><img class="geo__flag" src="assets/images/flags/mk.png">MK</span>
+																							<span><img class="geo__flag" src="assets/images/flags/mn.png">MN</span>
+																							<span><img class="geo__flag" src="assets/images/flags/mo.png">MO</span>
+																							<span><img class="geo__flag" src="assets/images/flags/mq.png">MQ</span>
+																							<span><img class="geo__flag" src="assets/images/flags/mu.png">MU</span>
+																							<span><img class="geo__flag" src="assets/images/flags/mv.png">MV</span>
+																							<span><img class="geo__flag" src="assets/images/flags/na.png">NA</span>
+																							<span><img class="geo__flag" src="assets/images/flags/nh.png">NH</span>
+																							<span><img class="geo__flag" src="assets/images/flags/pa.png">PA</span>
+																							<span><img class="geo__flag" src="assets/images/flags/pf.png">PF</span>
+																							<span><img class="geo__flag" src="assets/images/flags/pg.png">PG</span>
+																							<span><img class="geo__flag" src="assets/images/flags/py.png">PY</span>
+																							<span><img class="geo__flag" src="assets/images/flags/rs.png">RS</span>
+																							<span><img class="geo__flag" src="assets/images/flags/sc.png">SC</span>
+																							<span><img class="geo__flag" src="assets/images/flags/sn.png">SN</span>
+																							<span><img class="geo__flag" src="assets/images/flags/sr.png">SR</span>
+																							<span><img class="geo__flag" src="assets/images/flags/sv.png">SV</span>
+																							<span><img class="geo__flag" src="assets/images/flags/sy.png">SY</span>
+																							<span><img class="geo__flag" src="assets/images/flags/tj.png">TJ</span>
+																							<span><img class="geo__flag" src="assets/images/flags/tm.png">TM</span>
+																							<span><img class="geo__flag" src="assets/images/flags/tn.png">TN</span>
+																							<span><img class="geo__flag" src="assets/images/flags/tt.png">TT</span>
+																							<span><img class="geo__flag" src="assets/images/flags/tz.png">TZ</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ug.png">UG</span>
+																							<span><img class="geo__flag" src="assets/images/flags/uy.png">UY</span>
+																							<span><img class="geo__flag" src="assets/images/flags/vn.png">VN</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ye.png">YE</span>
+																							<span><img class="geo__flag" src="assets/images/flags/zm.png">ZM</span>
+																							<span><img class="geo__flag" src="assets/images/flags/zw.png">ZW</span>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																	<a class="bg-orange-800" data-tab="web"><i class="icon-screen3"></i> Web</a>
+																	<div id="geo_android" class="geo geo__android" style="display: none;">
+																		<div class="geo__list">
+																			<div class="geo__tbody">
+																				<div class="geo__row active">
+																					<div class="geo__item">
+																						<p class="geo__tier">Tier 1</p>
+																						<p class="geo__cost">80 USD</p>
+																						<p class="geo__arrow">→</p>
+																					</div>
+																					<div class="geo__item">
+																						<div class="geo__item_title non-regulated__title countries__title">Non-regulated</div>
+																						<div class="non-regulated__items countries__block">
+																							<span><img class="geo__flag" src="assets/images/flags/ae.png">AE</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ch.png">CH</span>
+																							<span><img class="geo__flag" src="assets/images/flags/hk.png">HK</span>
+																							<span><img class="geo__flag" src="assets/images/flags/qa.png">QA</span>
+																							<span><img class="geo__flag" src="assets/images/flags/sg.png">SG</span>
+																							<span><img class="geo__flag" src="assets/images/flags/th.png">TH</span>
+																						</div>
+																					</div>
+																				</div>
+																				<div class="geo__row">
+																					<div class="geo__item">
+																						<p class="geo__tier">Tier 2</p>
+																						<p class="geo__cost">50 USD</p>
+																						<p class="geo__arrow">→</p>
+																					</div>
+																					<div class="geo__item">
+																						<div class="geo__item_title non-regulated__title countries__title">Non-regulated</div>
+																						<div class="non-regulated__items countries__block">
+																							<span><img class="geo__flag" src="assets/images/flags/eg.png">EG</span>
+																							<span><img class="geo__flag" src="assets/images/flags/id.png">ID</span>
+																							<span><img class="geo__flag" src="assets/images/flags/kr.png">KR</span>
+																							<span><img class="geo__flag" src="assets/images/flags/lb.png">LB</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ma.png">MA</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ph.png">PH</span>
+																							<span><img class="geo__flag" src="assets/images/flags/py.png">PY</span>
+																							<span><img class="geo__flag" src="assets/images/flags/sa.png">SA</span>
+																							<span><img class="geo__flag" src="assets/images/flags/tt.png">TT</span>
+																							<span><img class="geo__flag" src="assets/images/flags/tw.png">TW</span>
+																							<span><img class="geo__flag" src="assets/images/flags/sz.png">SZ</span>
+																						</div>
+																					</div>
+																				</div>
+																				<div class="geo__row">
+																					<div class="geo__item">
+																						<p class="geo__tier">Tier 3</p>
+																						<p class="geo__cost">32 USD</p>
+																						<p class="geo__arrow">→</p>
+																					</div>
+																					<div class="geo__item">
+																						<div class="geo__item_title non-regulated__title countries__title">Non-regulated</div>
+																						<div class="non-regulated__items countries__block">
+																							<span><img class="geo__flag" src="assets/images/flags/ba.png">BA</span>
+																							<span><img class="geo__flag" src="assets/images/flags/bh.png">BH</span>
+																							<span><img class="geo__flag" src="assets/images/flags/br.png">BR</span>
+																							<span><img class="geo__flag" src="assets/images/flags/bs.png">BS</span>
+																							<span><img class="geo__flag" src="assets/images/flags/cl.png">CL</span>
+																							<span><img class="geo__flag" src="assets/images/flags/co.png">CO</span>
+																							<span><img class="geo__flag" src="assets/images/flags/cr.png">CR</span>
+																							<span><img class="geo__flag" src="assets/images/flags/do.png">DO</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ec.png">EC</span>
+																							<span><img class="geo__flag" src="assets/images/flags/in.png">IN</span>
+																							<span><img class="geo__flag" src="assets/images/flags/jm.png">JM</span>
+																							<span><img class="geo__flag" src="assets/images/flags/jo.png">JO</span>
+																							<span><img class="geo__flag" src="assets/images/flags/kw.png">KW</span>
+																							<span><img class="geo__flag" src="assets/images/flags/lk.png">LK</span>
+																							<span><img class="geo__flag" src="assets/images/flags/mx.png">MX</span>
+																							<span><img class="geo__flag" src="assets/images/flags/my.png">MY</span>
+																							<span><img class="geo__flag" src="assets/images/flags/nz.png">NZ</span>
+																							<span><img class="geo__flag" src="assets/images/flags/om.png">OM</span>
+																							<span><img class="geo__flag" src="assets/images/flags/pa.png">PA</span>
+																							<span><img class="geo__flag" src="assets/images/flags/pe.png">PE</span>
+																							<span><img class="geo__flag" src="assets/images/flags/pk.png">PK</span>
+																							<span><img class="geo__flag" src="assets/images/flags/rs.png">RS</span>
+																							<span><img class="geo__flag" src="assets/images/flags/uy.png">UY</span>
+																							<span><img class="geo__flag" src="assets/images/flags/zw.png">ZW</span>
+																						</div>
+																					</div>
+																				</div>
+																				<div class="geo__row">
+																					<div class="geo__item">
+																						<p class="geo__tier">Tier 4</p>
+																						<p class="geo__cost">21 USD</p>
+																						<p class="geo__arrow">→</p>
+																					</div>
+																					<div class="geo__item">
+																						<div class="geo__item_title non-regulated__title countries__title">Non-regulated</div>
+																						<div class="non-regulated__items countries__block">
+																							<span><img class="geo__flag" src="assets/images/flags/al.png">AL</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ar.png">AR</span>
+																							<span><img class="geo__flag" src="assets/images/flags/az.png">AZ</span>
+																							<span><img class="geo__flag" src="assets/images/flags/bd.png">BD</span>
+																							<span><img class="geo__flag" src="assets/images/flags/bo.png">BO</span>
+																							<span><img class="geo__flag" src="assets/images/flags/bw.png">BW</span>
+																							<span><img class="geo__flag" src="assets/images/flags/by.png">BY</span>
+																							<span><img class="geo__flag" src="assets/images/flags/dz.png">DZ</span>
+																							<span><img class="geo__flag" src="assets/images/flags/gh.png">GH</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ke.png">KE</span>
+																							<span><img class="geo__flag" src="assets/images/flags/kg.png">KG</span>
+																							<span><img class="geo__flag" src="assets/images/flags/kh.png">KH</span>
+																							<span><img class="geo__flag" src="assets/images/flags/kz.png">KZ</span>
+																							<span><img class="geo__flag" src="assets/images/flags/md.png">MD</span>
+																							<span><img class="geo__flag" src="assets/images/flags/mk.png">MK</span>
+																							<span><img class="geo__flag" src="assets/images/flags/mu.png">MU</span>
+																							<span><img class="geo__flag" src="assets/images/flags/na.png">NA</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ng.png">NG</span>
+																							<span><img class="geo__flag" src="assets/images/flags/pg.png">PG</span>
+																							<span><img class="geo__flag" src="assets/images/flags/sv.png">SV</span>
+																							<span><img class="geo__flag" src="assets/images/flags/tn.png">TN</span>
+																							<span><img class="geo__flag" src="assets/images/flags/tz.png">TZ</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ua.png">UA</span>
+																							<span><img class="geo__flag" src="assets/images/flags/uz.png">UZ</span>
+																							<span><img class="geo__flag" src="assets/images/flags/vn.png">VN</span>
+																						</div>
+																					</div>
+																				</div>
+																				<div class="geo__row">
+																					<div class="geo__item">
+																						<p class="geo__tier">Tier 5</p>
+																						<p class="geo__cost">14 USD</p>
+																						<p class="geo__arrow">→</p>
+																					</div>
+																					<div class="geo__item">
+																						<div class="geo__item_title non-regulated__title countries__title">Non-regulated</div>
+																						<div class="non-regulated__items countries__block">
+																							<span><img class="geo__flag" src="assets/images/flags/ad.png">AD</span>
+																							<span><img class="geo__flag" src="assets/images/flags/af.png">AF</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ag.png">AG</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ai.png">AI</span>
+																							<span><img class="geo__flag" src="assets/images/flags/am.png">AM</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ao.png">AO</span>
+																							<span><img class="geo__flag" src="assets/images/flags/aw.png">AW</span>
+																							<span><img class="geo__flag" src="assets/images/flags/bf.png">BF</span>
+																							<span><img class="geo__flag" src="assets/images/flags/bj.png">BJ</span>
+																							<span><img class="geo__flag" src="assets/images/flags/bn.png">BN</span>
+																							<span><img class="geo__flag" src="assets/images/flags/cd.png">CD</span>
+																							<span><img class="geo__flag" src="assets/images/flags/cl.png">CL</span>
+																							<span><img class="geo__flag" src="assets/images/flags/cm.png">CM</span>
+																							<span><img class="geo__flag" src="assets/images/flags/dm.png">DM</span>
+																							<span><img class="geo__flag" src="assets/images/flags/fj.png">FJ</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ga.png">GA</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ge.png">GE</span>
+																							<span><img class="geo__flag" src="assets/images/flags/gf.png">GF</span>
+																							<span><img class="geo__flag" src="assets/images/flags/gt.png">GT</span>
+																							<span><img class="geo__flag" src="assets/images/flags/hn.png">HN</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ht.png">HT</span>
+																							<span><img class="geo__flag" src="assets/images/flags/iq.png">IQ</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ir.png">IR</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ky.png">KY</span>
+																							<span><img class="geo__flag" src="assets/images/flags/la.png">LA</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ls.png">LS</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ml.png">ML</span>
+																							<span><img class="geo__flag" src="assets/images/flags/mm.png">MM</span>
+																							<span><img class="geo__flag" src="assets/images/flags/mn.png">MN</span>
+																							<span><img class="geo__flag" src="assets/images/flags/mo.png">MO</span>
+																							<span><img class="geo__flag" src="assets/images/flags/mq.png">MQ</span>
+																							<span><img class="geo__flag" src="assets/images/flags/mv.png">MV</span>
+																							<span><img class="geo__flag" src="assets/images/flags/mz.png">MZ</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ni.png">NI</span>
+																							<span><img class="geo__flag" src="assets/images/flags/np.png">NP</span>
+																							<span><img class="geo__flag" src="assets/images/flags/rw.png">RW</span>
+																							<span><img class="geo__flag" src="assets/images/flags/sn.png">SN</span>
+																							<span><img class="geo__flag" src="assets/images/flags/tg.png">TG</span>
+																							<span><img class="geo__flag" src="assets/images/flags/tm.png">TM</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ug.png">UG</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ve.png">VE</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ye.png">YE</span>
+																							<span><img class="geo__flag" src="assets/images/flags/zm.png">ZM</span>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+
+																	<a class="bg-orange-800" data-tab="incentive"><i class="icon-incentive"></i> Incentive</a>
+																	<div id="geo_incentive" class="geo geo__incentive" style="display:none;">
+																		<div class="geo__list">
+																			<div class="geo__tbody">
+																				<div class="geo__row active">
+																					<div class="geo__item">
+																						<p class="geo__tier">Tier 1</p>
+																						<p class="geo__cost">21 USD</p>
+																						<p class="geo__arrow">→</p>
+																					</div>
+																					<div class="geo__item">
+																						<div class="geo__item_title non-regulated__title countries__title">Non-regulated</div>
+																						<div class="non-regulated__items countries__block">
+																							<span><img class="geo__flag" src="assets/images/flags/ch.png">CH</span>
+																							<span><img class="geo__flag" src="assets/images/flags/hk.png">HK</span>
+																							<span><img class="geo__flag" src="assets/images/flags/na.png">NA</span>
+																							<span><img class="geo__flag" src="assets/images/flags/sa.png">SA</span>
+																							<span><img class="geo__flag" src="assets/images/flags/sg.png">SG</span>
+																						</div>
+																					</div>
+																				</div>
+																				<div class="geo__row">
+																					<div class="geo__item">
+																						<p class="geo__tier">Tier 2</p>
+																						<p class="geo__cost">14 USD</p>
+																						<p class="geo__arrow">→</p>
+																					</div>
+																					<div class="geo__item">
+																						<div class="geo__item_title non-regulated__title countries__title">Non-regulated</div>
+																						<div class="non-regulated__items countries__block">
+																							<span><img class="geo__flag" src="assets/images/flags/ae.png">AE</span>
+																							<span><img class="geo__flag" src="assets/images/flags/bb.png">BB</span>
+																							<span><img class="geo__flag" src="assets/images/flags/cl.png">CL</span>
+																							<span><img class="geo__flag" src="assets/images/flags/kr.png">KR</span>
+																							<span><img class="geo__flag" src="assets/images/flags/kw.png">KW</span>
+																							<span><img class="geo__flag" src="assets/images/flags/my.png">MY</span>
+																							<span><img class="geo__flag" src="assets/images/flags/nz.png">NZ</span>
+																							<span><img class="geo__flag" src="assets/images/flags/ph.png">PH</span>
+																							<span><img class="geo__flag" src="assets/images/flags/pk.png">PK</span>
+																							<span><img class="geo__flag" src="assets/images/flags/py.png">PY</span>
+																							<span><img class="geo__flag" src="assets/images/flags/qa.png">QA</span>
+																							<span><img class="geo__flag" src="assets/images/flags/sv.png">SV</span>
+																							<span><img class="geo__flag" src="assets/images/flags/th.png">TH</span>
+																							<span><img class="geo__flag" src="assets/images/flags/tw.png">TW</span>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+
+																</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-lg-6">
+									<div class="panel panel-flat">
+										<div class="panel-heading">
+											<h6 class="panel-title">Источники трафика</h6>
+                                            <div class="heading-elements">
+                                                <ul class="icons-list">
+                                                    <li><a data-action="collapse"></a></li>
+                                                    <li><a data-action="reload"></a></li>
+                                                    <li><a data-action="close"></a></li>
+                                                </ul>
+                                            </div>
+										</div>
+
+
+											<div class="table-responsive">
+												<table class="table table-striped">
+													<tbody>
+													<tr>
+														<td>Web sites</td>
+														<td class="text-warning">запрещена</td>
+													</tr>
+													<tr>
+														<td>Doorways</td>
+														<td class="text-warning">запрещена</td>
+													</tr>
+													<tr>
+														<td>Context AD</td>
+														<td class="text-warning">запрещена</td>
+													</tr>
+													<tr>
+														<td>Brand Context AD</td>
+														<td class="text-warning">запрещена</td>
+													</tr>
+													<tr>
+														<td>Social networks: targeted AD</td>
+														<td class="text-warning">запрещена</td>
+													</tr>
+													<tr>
+														<td>Social networks: publics, games, applications</td>
+														<td class="text-warning">запрещена</td>
+													</tr>
+													<tr>
+														<td>Emailing</td>
+														<td class="text-warning">запрещена</td>
+													</tr>
+													<tr>
+														<td>Mobile traffic</td>
+														<td class="text-warning">запрещена</td>
+													</tr>
+													<tr>
+														<td>ClickUnder/PopUnder</td>
+														<td class="text-warning">запрещена</td>
+													</tr>
+													<tr>
+														<td>Rebrokering</td>
+														<td class="text-warning">запрещена</td>
+													</tr>
+													<tr>
+														<td>Incent traffic</td>
+														<td class="text-success">разрешена</td>
+													</tr>
+													</tbody>
+												</table>
+											</div>
+
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="panel panel-flat">
+										<div class="panel-heading">
+											<h6 class="panel-title">Показатели конверсии</h6>
+										</div>
+
+
+											<table class="table table-striped">
+												<tbody>
+												<tr>
+													<td>EPC</td>
+													<td class="last-cell">
+														1.64
+														<i class="glyphicon glyphicon-question-sign" data-popup="tooltip" data-original-title="CR – конверсия, отношение действий к переходам" data-placement="top"></i>
+													</td>
+												</tr>
+												<tr>
+													<td>CR</td>
+													<td class="last-cell">0.1
+														<i class="glyphicon glyphicon-question-sign" data-popup="tooltip" data-original-title="Подсказка" data-placement="top"></i>
+													</td>
+												</tr>
+												<tr>
+													<td>Макс. время обработки</td>
+													<td class="last-cell">дней</td>
+												</tr>
+												<tr>
+													<td>Дневной лимит</td>
+													<td class="last-cell">&mdash;</td>
+												</tr>
+												</tbody>
+											</table>
+
+									</div>
+								</div>
+							</div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="panel panel-flat">
+                                        <div class="panel-heading">
+                                            <h6 class="panel-title">Ваши постбеки</h6>
+                                            <div class="heading-elements">
+                                                <ul class="icons-list">
+                                                    <li><a data-action="collapse"></a></li>
+                                                    <li><a data-action="reload"></a></li>
+                                                    <li><a data-action="close"></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+
+
+                                                <table class="table table-striped table-postbacks">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>ID</th>
+                                                        <th>URL</th>
+                                                        <th>Статус</th>
+                                                        <th>Цель</th>
+                                                        <th class="del"><i class="icon-trash"></i></th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>20</td>
+                                                        <td class="post-back-url"><a href="#" id="edit" data-title="Edit username">http://track.cpawall.com/aff_lsr?transaction_id={sub5}</a></td>
+														<td>
+															<select class="selectbox">
+																<option value="opt1">При создании</option>
+																<option value="opt2">Option 2</option>
+																<option value="opt3">Option 3</option>
+																<option value="opt4">Option 4</option>
+																<option value="opt5">Option 5</option>
+																<option value="opt6">Option 6</option>
+																<option value="opt7">Option 7</option>
+																<option value="opt8">Option 8</option>
+															</select>
+														</td>
+														<td>
+															<select class="selectbox">
+																<option value="opt1">Первый депозит</option>
+																<option value="opt2">Option 2</option>
+																<option value="opt3">Option 3</option>
+																<option value="opt4">Option 4</option>
+																<option value="opt5">Option 5</option>
+																<option value="opt6">Option 6</option>
+																<option value="opt7">Option 7</option>
+																<option value="opt8">Option 8</option>
+															</select>
+														</td>
+                                                        <td class="del"><i class="icon-trash"></i></td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+
+										<div class="panel-body">
+											<a class="postback-aсtion" href="#"><span class="label bg-slate-600">Добавить постбек</span> </a>
+											<a class="postback-aсtion" href="#"><span class="label bg-slate-600">Интеграция с треками</span> </a>
+											<a class="postback-aсtion" href="#"><span class="label bg-slate-600">Глобальные постбеки</span></a>
+											<button type="submit" class="btn bg-orange-800 legitRipple to-right">Сохранить </button>
+										</div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="panel panel-flat panel-collapsed">
+                                        <div class="panel-heading">
+                                            <h6 class="panel-title">Справка по постбекам</h6>
+                                            <div class="heading-elements">
+                                                <ul class="icons-list">
+                                                    <li><a data-action="collapse"></a></li>
+                                                    <li><a data-action="reload"></a></li>
+                                                    <li><a data-action="close"></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="panel-body">
+                                            <p>Параметр PostBack URL будет полезен, если Вам необходимо в автоматическом режиме получать информацию о совершенной конверсии. Например в случае если Вы ведете учет конверсий в сторонней системе статистики или отслеживаете конверсии на источниках трафика.</p>
+
+                                            <p>PostBack запрос будет отправлен на указанный адрес методам GET. Для передачи параметров в запрос, Вы можете использовать макросы указанные ниже.</p>
+
+                                            <p>Пример PostBack ссылки для передачи суммы заработока и субаккаунта:</p>
+
+											<br>
+											<input type="text" class="form-control form-control-postback" value="http://track.cpa.iqoption.com/click?pid=38768&offer_id=30" disabled>
+                                            <br><br>
+
+                                            <p>В момент перехода макросы {sum} и {subid} будут заменены на соответствующие значения.</p>
+										</div>
+                                            <table class="table table-striped">
+                                                <thead>
+                                                <tr>
+                                                    <th>Параметр</th>
+                                                    <th>Описание</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>{uagent}</td>
+                                                        <td>UserAgent браузера пользователя</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{ip}</td>
+                                                        <td>IP адрес пользователя</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{sub1}</td>
+                                                        <td>Субаккаунт 1</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{sub2}</td>
+                                                        <td>Субаккаунт 2</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{sub3}</td>
+                                                        <td>Субаккаунт 3</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{sub4}</td>
+                                                        <td>Субаккаунт 4</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{sub5}</td>
+                                                        <td>Субаккаунт 5</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{transactionid}</td>
+                                                        <td>Идентификатор конверсии на стороне рекламодателя</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{date}</td>
+                                                        <td>Дата и время совершения конверсии в формате Y-m-d H:i:s</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{click_date}</td>
+                                                        <td>Дата и время совершения клика в формате Y-m-d H:i:s</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{offerid}</td>
+                                                        <td>Идентификатор оффера в системе</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{offer_name}</td>
+                                                        <td>Идентификатор оффера в системе</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{status}</td>
+                                                        <td>Статус конверсии, передаваемые параметры:
+                                                            <br />1 – действие «принято» (будет оплачено впоследствии рекламодателем)
+                                                            <br />2 – действие «в обработке» (решение по нему ещё не принято, необходимо запросить статус позже)
+                                                            <br />3 – действие «отклонено» (действие не будет оплачено рекламодателем)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{sum}</td>
+                                                        <td>Отчисления за конверсию</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{city}</td>
+                                                        <td>Город</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{geo}</td>
+                                                        <td>Страна</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{goal}</td>
+                                                        <td>Цель</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{device_id}</td>
+                                                        <td>ID устройства</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{currency}</td>
+                                                        <td>Валюта</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{comment}</td>
+                                                        <td>Комментарий</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{ios_idfa}</td>
+                                                        <td>Идентификатор IOS устройства</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>{android_id}</td>
+                                                        <td>Идентификатор Android устройства</td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+				</div>
+				<!-- /content area -->
+
+			</div>
+			<!-- /main content -->
+
+		</div>
+		<!-- /page content -->
+
+	</div>
+	<!-- /page container -->
+
+</body>
+</html>

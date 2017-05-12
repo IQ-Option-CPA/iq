@@ -1,0 +1,471 @@
+.cpa_vs_revshare {	
+	background-color: #eeeded;
+	color: #19202e;
+
+	.content__area {
+		background-color: #ffffff;
+		box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+		border-radius: 3px;
+		margin: 20px;
+	}
+	.orange {
+		color: #f70;
+	}
+	.page-header {
+		.icon-arrow-left52 {
+			background-color: #fff;
+			font-size: 17px;
+			padding: 3px;
+			cursor: pointer
+		}
+		.breadcrumb-line-component {
+			background-color: #ffffff;
+			color: #202020;
+		}
+		.breadcrumb {
+			li {
+				font-weight: 500;
+				a {
+					color: #202020;
+				}
+				i {
+					padding: 3px;
+					background-color: #fff;
+				}
+			}
+			li + li::before {
+				color: #202020;
+			}
+			.active {
+				color: #202020;
+				font-weight: 400;
+			}
+		}
+	}
+	.content {
+		max-width: 797px;
+		margin: 0 auto;
+		width: 100%;
+		padding-top: 50px;
+		&__title {
+			color: #202020;
+			font-size: 36px;
+			font-weight: 300;
+			letter-spacing: 1.5px;
+			line-height: 1.3;
+			text-align: center;
+			text-transform: uppercase;
+			margin-bottom: 19px;
+
+		}
+		&__subtitle {
+			text-align: center;
+			.orange;
+			font-size: 18px;
+			line-height: 1.4;
+			font-weight: 400;
+			margin: 0 -10px 50px;
+		}
+		
+		.block__comparison {
+			display: -webkit-flex;
+			display: -moz-flex;
+			display: -ms-flex;
+			display: -o-flex;
+			display: flex;
+			justify-content: space-between;
+			align-items: stretch;
+			margin-bottom: 50px;
+			p {
+				font-size: 14px;
+				line-height: 1.57;
+				color: #202020;
+				font-weight: 400;
+				margin-top: 19px;
+
+			}
+
+			&--cpa {
+				width: 46%;
+				max-width: 300px;
+				&__logo {
+					width: 145px;
+					height: 32px;
+				}
+
+			}
+			&--revshare {
+				width: 44%;
+				max-width: 288px;
+				&__logo {
+					width: 145px;
+					height: 35px;
+				}
+			}
+			&--vs {
+				line-height: 130px;
+			}
+		}
+		.block__notice {
+			font-size: 18px;
+			font-weight: 400;
+			line-height: 1.33;
+			text-align: center;
+			border: 1px dashed #52567c;
+			padding: 25px;
+			border-radius: 5px;
+		}
+		.block__title {
+			font-size: 24px;
+			font-weight: 400;
+			line-height: 1.25;
+			.orange;
+			text-align: center;
+			&--white {
+				color: #fff;
+			}
+
+		}
+		.block__profit {
+			margin: 60px 0 20px;
+		}
+		.block__benefits {
+			margin: 60px 0 20px;
+			.block__title {
+				margin-bottom: 50px;
+			}	
+			.benefits__list {
+				display: -webkit-flex;
+				display: -moz-flex;
+				display: -ms-flex;
+				display: -o-flex;
+				display: flex;
+				justify-content: space-between;
+				flex-wrap: wrap;
+			}
+			.benefits__item {
+				width: 48%;
+				max-width: 288px;
+				margin-bottom: 30px;
+				p {
+					color: #202020;
+					font-size: 14px;
+					line-height: 1.8;
+					font-weight: 400;
+
+				}
+				img {
+					display: block;
+					margin: 0 auto 20px;
+				}
+				div {
+					height: 135px;
+					display: -webkit-flex;
+					display: -moz-flex;
+					display: -ms-flex;
+					display: -o-flex;
+					display: flex;
+					align-items: center
+				}
+				.benefits__item--1 {
+					width: 82px;
+					height: 102px;
+				}
+				.benefits__item--2 {
+					width: 146px;
+					height: 80px;
+				}
+				.benefits__item--3 {
+					width: 95px;
+					height: 94px;
+				}
+				.benefits__item--4 {
+					width: 112px;
+					height: 107px;
+				}						
+			}
+		}
+		.flare {
+			width: 100%;
+			margin-top: -28px;
+			margin-bottom: -19px;
+			img {
+				width: 100%;
+			}
+		}
+		.block__profit {
+			.block__title {
+				margin-bottom: 17px;
+			}		
+			.block__title--white {
+				margin-bottom: 42px;
+			}
+			.block__subtitle {
+				font-size: 16px;
+				font-weight: 400;
+				line-height: 1.625;
+				color: #202020;
+				text-align: center;
+				margin-bottom: 50px;
+			}	
+			.block__diagrams {
+				display: -webkit-flex;
+				display: -moz-flex;
+				display: -ms-flex;
+				display: -o-flex;
+				display: flex;
+				justify-content: space-between;
+				margin-bottom: 25px;
+				.diagrams__item {
+					width: 47%;
+					margin-bottom: 30px;
+					text-align: center;
+					img {
+						width: 100%;
+					}
+					p {
+						font-size: 18px;
+						line-height: 1.33;
+						color: #202020;
+						margin-top: 30px;
+
+					}
+				}
+			}
+			.block__buttons {
+				display: -webkit-flex;
+				display: -moz-flex;
+				display: -ms-flex;
+				display: -o-flex;
+				display: flex;
+				justify-content: center;
+				div {
+					margin: 13px;
+					width: 100%;
+					max-width: 208px;
+					font-size: 18px;
+					font-weight: 400;
+					line-height: 1.4;
+					text-align: center;
+					a {
+						width: 100%;
+						padding: 9px 20px;
+						border-radius: 3px;
+						border: 1px solid #f70;
+						display: block;
+						transition: all ease-out 0.5s;
+						&.btn--orange {
+							background-color: #f70;
+							color: #fff;
+							&:hover {
+								//background-color: #d83f0f;
+								box-shadow:inset 0 -1px 1px #df5c00, inset 0 1px 2px #df5c00, inset 0 0 0 60px #df5c00;
+								border-color: #d83f0f;
+							}
+						}
+						&.btn--orange-border {
+							.orange;
+							&:hover {
+                                //color: #ff7e16;
+							    //background-color: rgba(255,255,255,0.05);
+								color: #ffffff;
+								box-shadow:inset 0 -1px 1px #f70, inset 0 1px 2px #f70, inset 0 0 0 60px #f70
+    							
+							}
+						}
+						&:hover {
+							border: 1px solid #ff7e16;
+							//box-shadow: 0px 2px 16px -11px #ffffff;
+						}
+					}
+				}
+
+			}
+		}
+	}
+}
+@media (max-width:1100px) {
+	.cpa_vs_revshare {
+		.content {
+			padding-top: 15px;
+			&__title {
+				font-size: 25px;
+				margin-bottom: 10px;
+			}
+			&__subtitle {
+				margin: 0 0 30px;
+				font-size: 16px;
+			}
+			.block__comparison {
+				margin-bottom: 30px;
+				&--vs {
+					width: 10%;
+					img {
+						max-width: 85%;
+					}
+				}
+			}
+			.block__notice {
+				font-size: 16px;
+				padding: 18px;
+			}
+			.block__title {
+				font-size: 20px;
+			}
+			.block__profit {
+				margin: 30px 0 20px;
+			}
+			.block__benefits {
+				margin: 30px 0 20px;
+				.block__title {
+					margin-bottom: 30px;
+				}
+				.benefits__item {
+					div {
+						height: 120px;
+						img {
+							transform: scale(0.8);
+
+						}
+					}
+
+				}
+			}
+			.block__profit {
+				.block__diagrams {
+					.diagrams__item {
+						p {
+							font-size: 14px;
+						}
+					}
+				 }
+				.block__title--white {
+					margin-bottom: 30px;
+				}
+				.block__title--black {
+					color: #202020;
+				}
+			}
+		}
+	}
+}
+@media (max-width:480px) {
+	.cpa_vs_revshare {
+		.content {
+			&__title {
+				font-size: 20px;
+			}
+			&__subtitle {
+				font-size: 14px;
+			}
+			.block__comparison {
+				display: block;
+				&--cpa,&--revshare,&--vs  {
+					width: 100%;
+					max-width: 100%;
+					text-align: center;
+				}
+				&--vs {
+					margin: 30px 0;
+					line-height: 1;
+					img {
+						width: 45px;
+					}
+				}
+			}
+			.block__notice {
+				font-size: 14px;
+			}
+			.block__title {
+				font-size: 20px;
+			}
+			.block__benefits {
+				margin: 30px 0 20px;
+				.block__title {
+					margin-bottom: 30px;
+				}
+				.benefits__list {
+					display: block;
+				}
+				.benefits__item {
+					width: 100%;
+					max-width: 100%;
+					text-align: center;
+					div {
+						height: auto;
+						img {
+							transform: scale(0.8);
+
+						}
+					}
+
+				}
+			}
+			.flare {
+				margin: 0;
+			}
+			.block__profit {
+				.block__diagrams {
+					display: block;
+					.diagrams__item {
+						width: 100%;
+					}
+
+				}
+				.block__title--white {
+					margin-bottom: 30px;
+				}
+				.block__buttons {
+					display: block;
+					div {
+						margin: 13px auto;
+					}
+				}
+			}
+		}
+	}
+}
+.page_register {
+	background-image: url("../images/backgrounds/register__bg.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: #37474F;
+	border-color: #37474F;
+	color: #fff;
+
+	.register-form {
+
+		.rules-underlined {
+			text-decoration: underline !important;
+		}
+	}
+
+}
+
+.register__cpa {
+
+	.login-form {
+		box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.75);
+	}
+
+	.small-custom {
+		a {
+			font-size: 12px;
+			margin-top: 3px;
+			display: block;
+		}
+	}
+	a {
+		color: #F57C00;
+		text-decoration: underline;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+	.btn-register {
+		color: #fff;
+		text-decoration: none;
+
+	}
+
+}

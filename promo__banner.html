@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Промо - Баннеры</title>
+    <!-- Global stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+    <link href="assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/core.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/components.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/colors.css" rel="stylesheet" type="text/css">
+    <!-- /global stylesheets -->
+    <!-- Core JS files -->
+    <script type="text/javascript" src="assets/js/plugins/loaders/pace.min.js"></script>
+    <script type="text/javascript" src="assets/js/core/libraries/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/core/libraries/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/loaders/blockui.min.js"></script>
+    <!-- /core JS files -->
+    <!-- Theme JS files -->
+    <script type="text/javascript" src="assets/js/core/libraries/jasny_bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/forms/selects/select2.min.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/forms/selects/bootstrap_select.min.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/forms/styling/uniform.min.js"></script>
+    <script type="text/javascript" src="assets/js/core/libraries/jquery_ui/core.min.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/forms/selects/selectboxit.min.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/forms/inputs/typeahead/typeahead.bundle.min.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/forms/tags/tagsinput.min.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/forms/tags/tokenfield.min.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/forms/inputs/touchspin.min.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/forms/inputs/maxlength.min.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/forms/inputs/formatter.min.js"></script>
+    <script type="text/javascript" src="assets/js/core/app.js"></script>
+    <script type="text/javascript" src="assets/js/pages/form_floating_labels.js"></script>
+    <script type="text/javascript" src="assets/js/plugins/ui/ripple.min.js"></script>
+    <!-- /theme JS files -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('img[src$=".svg"]').each(function() {
+                var $img = jQuery(this);
+                var imgURL = $img.attr('src');
+                var attributes = $img.prop("attributes");
+
+                $.get(imgURL, function(data) {
+                    // Get the SVG tag, ignore the rest
+                    var $svg = jQuery(data).find('svg');
+
+                    // Remove any invalid XML tags
+                    $svg = $svg.removeAttr('xmlns:a');
+
+                    // Loop through IMG attributes and apply on SVG
+                    $.each(attributes, function() {
+                        $svg.attr(this.name, this.value);
+                    });
+
+                    // Replace IMG with SVG
+                    $img.replaceWith($svg);
+                }, 'xml');
+            });
+        });
+    </script>
+</head>
+
+<body class="video-page">
+<!-- Main navbar -->
+<div class="navbar navbar-default header-highlight">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="index.html"><img src="assets/images/svg/logotype__beta.svg" alt=""></a>
+        <ul class="nav navbar-nav visible-xs-block">
+            <li><a data-toggle="collapse" data-target="#navbar-mobile" style="background-color: transparent;"><i
+                    class="icon-tree5"></i></a></li>
+            <li><a class="sidebar-mobile-main-toggle"><i class="icon-paragraph-justify3"></i></a></li>
+        </ul>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar-mobile">
+        <ul class="nav navbar-nav">
+            <li>
+                <a class="sidebar-control sidebar-main-toggle hidden-xs" style="background-color: transparent;">
+                    <i class="icon-paragraph-justify3"></i>
+                </a>
+            </li>
+            <li class="dropdown language-switch">
+                <a class="dropdown-toggle" data-toggle="dropdown">
+                    <img src="assets/images/flags/ru.png" class="position-left" alt=""> Русский
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a class="russian"><img src="assets/images/flags/ru.png" alt=""> Русский</a>
+                    </li>
+                    <li>
+                        <a class="english"><img src="assets/images/flags/gb.png" alt=""> English</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <div class="navbar-right">
+            <p class="navbar-text balance-title">Баланс:</p>
+            <p class="navbar-text balance-value">$1790.22</p>
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="icon-bell2"></i>
+                        <span class="visible-xs-inline-block position-right">Обновления</span>
+                        <span class="status-mark border-pink-300"></span>
+                    </a>
+                    <div class="dropdown-menu dropdown-content">
+                        <div class="dropdown-content-heading">
+                            Обновления
+                            <ul class="icons-list">
+                                <li><a href="#"><i class="icon-menu7"></i></a></li>
+                            </ul>
+                        </div>
+                        <ul class="media-list dropdown-content-body width-350">
+                            <li class="media">
+                                <div class="media-left">
+                                    <a href="#" class="btn bg-danger-400 btn-rounded btn-icon btn-xs"><img src="assets/images/svg/icon__promo.svg" class="svg social-link" /></a>
+                                </div>
+                                <div class="media-body">
+                                    <a href="#">Промо</a> добавлен новый перевод «Start trading» на испанском языке"
+                                    <div class="media-annotation">4 минуты назад</div>
+                                </div>
+                            </li>
+                            <li class="media">
+                                <div class="media-left">
+                                    <a href="#" class="btn bg-danger-400 btn-rounded btn-icon btn-xs"><img src="assets/images/svg/icon__promo.svg" class="svg social-link" /></a>
+                                </div>
+                                <div class="media-body">
+                                    <a href="#">Промо</a> Промо добавлен пакет баннеров
+                                    <div class="media-annotation">36 минут назад</div>
+                                </div>
+                            </li>
+                            <li class="media">
+                                <div class="media-left">
+                                    <a href="#" class="btn bg-danger-400 btn-rounded btn-icon btn-xs"><img src="assets/images/svg/icon__news.svg" class="svg social-link" /></a>
+                                </div>
+                                <div class="media-body">
+                                    <a href="#">Новости</a> Новые прибыльные страны
+                                    <div class="media-annotation">2 часа назад</div>
+                                </div>
+                            </li>
+                            <li class="media">
+                                <div class="media-left">
+                                    <a href="offer.html" class="btn bg-danger-400 btn-rounded btn-icon btn-xs"><img src="assets/images/svg/icon__offer.svg" class="svg social-link" /></a>
+                                </div>
+                                <div class="media-body">
+                                    <a href="#">Офферы</a> Добалвены новые офферы CPI, CPL
+                                    <div class="media-annotation">1 Декабря, 18:01</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="icon-bubble8"></i>
+                        <span class="visible-xs-inline-block position-right">Сообщения</span>
+                        <span class="status-mark border-pink-300"></span>
+                    </a>
+                    <div class="dropdown-menu dropdown-content dropdown-messages width-350">
+                        <div class="dropdown-content-heading">
+                            Сообщения
+                            <ul class="icons-list">
+                                <li><a href="#"><i class="icon-compose"></i></a></li>
+                            </ul>
+                        </div>
+                        <ul class="media-list dropdown-content-body">
+                            <li class="media">
+                                <div class="media-left">
+                                    <span class="badge bg-danger-400 media-badge">5</span>
+                                    <img src="assets/images/manager__photo.png" class="img-circle img-sm" alt="">
+                                </div>
+                                <div class="media-body">
+                                    <a href="#" class="media-heading">
+                                        <span class="text-semibold">Артем Пачко</span>
+                                        <span class="media-annotation pull-right">12:16</span>
+                                    </a>
+                                    <span class="text-muted">Ваша следующая выплата будет отправлена вам</span>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="dropdown-content-footer">
+                            <a href="#" data-popup="tooltip" title="All messages"><i
+                                    class="icon-menu display-block"></i></a>
+                        </div>
+                    </div>
+                </li>
+                <li class="dropdown dropdown-user">
+                    <a class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="dropdown__username">Дмитрий Зарецкий</span>
+                        <i class="caret"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li><a href="#"><i class="icon-user-plus"></i> Mой профиль</a></li>
+                        <li><a href="#"><i class="icon-cog5"></i> Настройки</a></li>
+                        <li><a href="#"><i class="icon-switch2"></i> Выход</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- /main navbar -->
+<!-- Page container -->
+<div class="page-container">
+    <!-- Page content -->
+    <div class="page-content">
+        <!-- Main sidebar -->
+        <div class="sidebar sidebar-main">
+            <div class="sidebar-content">
+                <!-- User menu -->
+                <div class="sidebar-user-material">
+                    <div class="category-content">
+                        <div class="sidebar-user-material-content">
+                            <a href="#"><img src="assets/images/manager__photo.png" class="img-circle img-responsive" alt=""></a>
+                            <h6>Артём Пачко</h6>
+                            <span class="text-size-small">ваш персональный менеджер</span>
+                            <span class="text-size-small-12"><img src="assets/images/svg/icon__skype.svg"> <a
+                                    href="skype:cpa.iqoption?call">cpa.iqoption</a></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- /user menu -->
+                <!-- Main navigation -->
+                <div class="sidebar-category sidebar-category-visible">
+                    <div class="category-content no-padding">
+                        <ul class="navigation navigation-main navigation-accordion">
+                            <!-- Main -->
+                            <li class="active"><a href="index.html" class="current"><i class="navigation__icon"><img
+                                    src="assets/images/svg/icon__dashboard.svg"/></i> <span>Дашборд</span></a></li>
+                            <li>
+                                <a href="#">
+                                    <i class="navigation__icon"><img src="assets/images/svg/icon__statistic.svg"/></i>
+                                    <span>Статистика</span>
+                                </a>
+                                <ul>
+                                    <li><a href="#">За день</a></li>
+                                    <li><a href="#">Конверсии</a></li>
+                                    <li><a href="#">Офферы</a></li>
+                                    <li><a href="#">Браузеры</a></li>
+                                    <li><a href="#">ОС</a></li>
+                                    <li><a href="#">Устройства</a></li>
+                                    <li><a href="#">Страны</a></li>
+                                    <li><a href="#">Города</a></li>
+                                    <li><a href="#">Цели</a></li>
+                                    <li><a href="#">Рефералы</a></li>
+                                    <li class="navigation-divider"></li>
+                                    <li><a href="#">Субаккаунт #1</a></li>
+                                    <li><a href="#">Субаккаунт #2</a></li>
+                                    <li><a href="#">Субаккаунт #3</a></li>
+                                    <li><a href="#">Субаккаунт #4</a></li>
+                                    <li><a href="#">Субаккаунт #5</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="offer.html">
+                                    <i class="navigation__icon"><img src="assets/images/svg/icon__offer.svg"/></i>
+                                    <span>Офферы</span>
+                                </a>
+                                <ul>
+                                    <li><a href="offer.html" id="layout1">Активные</a></li>
+                                    <li><a href="offer.html" id="layout2">Доступные</a></li>
+                                    <li><a href="offer.html" id="layout3">Revshare Affiliate</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="navigation__icon"><img src="assets/images/svg/icon__promo.svg"/></i>
+                                    <span>Промо</span>
+                                </a>
+                                <ul>
+                                    <li><a href="#">Баннеры</a></li>
+                                    <li><a href="#">Видео</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="navigation__icon"><img src="assets/images/svg/icon__payments.svg"/></i>
+                                    <span>Выплаты</span>
+                                </a>
+                                <ul>
+                                    <li><a href="#">Настройки выплат</a></li>
+                                    <li><a href="#">История выплат</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="navigation__icon"><img src="assets/images/svg/icon__news.svg"/></i>
+                                    <span>Новости<span class="label label__news">1</span></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="navigation__icon"><img src="assets/images/svg/icon__support.svg"/></i>
+                                    <span>Поддержка</span>
+                                </a>
+                                <ul>
+                                    <li><a href="#">Написать в поддержку</a></li>
+                                    <li><a href="#">F.A.Q</a></li>
+                                </ul>
+                            </li>
+                            <!-- /main -->
+                        </ul>
+                    </div>
+                </div>
+                <!-- /main navigation -->
+            </div>
+        </div>
+        <!-- /main sidebar -->
+        <!-- Main content -->
+        <div class="content-wrapper">
+            <!-- Page header -->
+            <div class="page-header">
+                <div class="page-header-content">
+                    <div class="page-title">
+                        <h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">Промо</span> -
+                            Баннеры</h4>
+                    </div>
+                </div>
+                <div class="breadcrumb-line breadcrumb-line-component">
+                    <ul class="breadcrumb">
+                        <li><a href="index.html"><i class="icon-home2 position-left"></i> Дашборд</a></li>
+                        <li><a href="index.html"><i class="icon-home2 position-left"></i> Промо</a></li>
+                        <li class="active">Баннеры</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /page header -->
+
+            <script>
+                $(document).ready(function() {
+                    $('.open-block').on('click', function() {
+                        var blockToOpen = $(this).attr('id') + '-block';
+                        if ($('.open-block').is('.active') == false) {
+                            $('#' + blockToOpen).slideDown();
+                            $(this).addClass('active');
+                        } else if ($(this).hasClass('active')) {
+                            $('.open-lang').slideUp();
+                            $(this).removeClass('active');
+                        } else {
+                            $('.open-lang').hide();
+                            $('#' + blockToOpen).slideDown();
+                            $('.open-block').removeClass('active');
+                            $(this).addClass('active');
+                        }
+                    });
+                });
+            </script>
+            <!-- Content area -->
+            <div class="content">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h6 class="block-title">Banners on subjects</h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <div class="panel video-block block-rounded open-block" id="android-banner">
+                            <div class="video-title">Android</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <div class="panel video-block block-rounded open-block" id="ios-banner">
+                            <div class="video-title">IOS</div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-lg-2 col-md-4 col-xs-6">
+                        <div class="panel video-block block-rounded open-block" id="general-banner">
+                            <div class="video-title">General</div>
+                        </div>
+                    </div> -->
+                    <!-- <div class="col-lg-2 col-md-4 col-xs-6">
+                        <div class="panel video-block block-rounded open-block" id="gif-banner">
+                            <div class="video-title">Gif animate</div>
+                        </div>
+                    </div> -->
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <div class="panel video-block block-rounded open-block" id="desktop-banner">
+                            <div class="video-title">Desktop</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row open-lang">
+                    <div class="col-xs-12">
+                        <h6 class="block-title">Banners on languages</h6>
+                    </div>
+                </div>
+                <!-- ANDROID -->
+                <div class="row open-lang" id="android-banner-block">
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B9j6lQ0YiH1nZ25LR3dEUkc4MFE" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/en@2x.jpg">
+                                <div class="video-title">EN</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B-D5qFkmeAIfSFNXa0hEOXZtanc" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/ar@2x.png">
+                                <div class="video-title">AR</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B-D5qFkmeAIfWFl1WmVxbWp4QVk" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/cn@2x.jpg">
+                                <div class="video-title">CN</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B9j6lQ0YiH1nUUR5WTVqWFcyWU0" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/de@2x.jpg">
+                                <div class="video-title">DE</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B-D5qFkmeAIfSHM2NWJZZzdOeG8" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/es@2x.jpg">
+                                <div class="video-title">ES</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B-D5qFkmeAIfVGxnclJ2WmFRTjA" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/fr@2x.jpg">
+                                <div class="video-title">FR</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B-D5qFkmeAIfb21vM2g1U1dHTUk" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/id@2x.jpg">
+                                <div class="video-title">ID</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B-D5qFkmeAIfbmduWXdhWkFVa2c" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/it@2x.jpg">
+                                <div class="video-title">IT</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B-D5qFkmeAIfX255TVlfSnh1VU0" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/kr@2x.jpg">
+                                <div class="video-title">KR</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B-D5qFkmeAIfazVULTVrUEtTNDg" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/no@2x.jpg">
+                                <div class="video-title">NO</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B-D5qFkmeAIfSG1UcmM2ZlBwVTQ" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/pt@2x.jpg">
+                                <div class="video-title">PT</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B-D5qFkmeAIfTUJPS19KUm5XSWs" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/ru@2x.jpg">
+                                <div class="video-title">RU</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B-D5qFkmeAIfdUktS0NyNUhnYzQ" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/se@2x.jpg">
+                                <div class="video-title">SE</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B-D5qFkmeAIfdGRmc2pPZHBUVkk" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/th@2x.png">
+                                <div class="video-title">TH</div>
+                            </div>
+                        </a>
+                    </div>
+
+
+                </div>
+                <!-- IOS -->
+                <div class="row open-lang" id="ios-banner-block">
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B9j6lQ0YiH1ncUtzNUsweV9xb1k" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/en@2x.jpg">
+                                <div class="video-title">EN</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B-D5qFkmeAIfWDRjdGFsYmhXMXM" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/ar@2x.png">
+                                <div class="video-title">AR</div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B9j6lQ0YiH1nVWRPYUstU293dEE" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/cn@2x.jpg">
+                                <div class="video-title">CN</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B9j6lQ0YiH1nZ3Yzb1hqN3d2Tmc" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/de@2x.jpg">
+                                <div class="video-title">DE</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B9j6lQ0YiH1nZU9LWGZqZGk3WGM" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/es@2x.jpg">
+                                <div class="video-title">ES</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B9j6lQ0YiH1nNXNkejNlb2htV1E" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/fr@2x.jpg">
+                                <div class="video-title">FR</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B9j6lQ0YiH1ndFE2c1dOWW9wMW8" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/id@2x.jpg">
+                                <div class="video-title">ID</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B9j6lQ0YiH1ndFpzRTVMUFhmbFE" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/it@2x.jpg">
+                                <div class="video-title">IT</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B9j6lQ0YiH1nSGYtTUlmOVloYXM" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/kr@2x.jpg">
+                                <div class="video-title">KR</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B9j6lQ0YiH1nQ040MVR4UklCOEE" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/no@2x.jpg">
+                                <div class="video-title">NO</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B9j6lQ0YiH1nOXpZcm9SVnVfQ2M" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/pt@2x.jpg">
+                                <div class="video-title">PT</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B9j6lQ0YiH1nMjZieG5yM1l3aFU" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/ru@2x.jpg">
+                                <div class="video-title">RU</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B9j6lQ0YiH1nbjlNUnp4bUk1WWc" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/se@2x.jpg">
+                                <div class="video-title">SE</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B-D5qFkmeAIfYTJMRGYwUVh2cUE" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/th@2x.png">
+                                <div class="video-title">TH</div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                </div>
+                <!-- GENERAL -->
+                <!-- <div class="row open-lang" id="general-banner-block">
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B9j6lQ0YiH1nVkd1ZU1aamIwN2s" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/en@2x.jpg">
+                                <div class="video-title">EN</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B9j6lQ0YiH1nTDFzeVYyQW5EXzQ" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/cn@2x.jpg">
+                                <div class="video-title">CN</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B9j6lQ0YiH1nWU44UTYwR1VFN2M" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/de@2x.jpg">
+                                <div class="video-title">DE</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B9j6lQ0YiH1nTzNiUkNTcWVlMVU" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/es@2x.jpg">
+                                <div class="video-title">ES</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B9j6lQ0YiH1nUHVGVm1pUTJaeGM" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/fr@2x.jpg">
+                                <div class="video-title">FR</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B9j6lQ0YiH1nVzhqQVdhdTAteFU" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/id@2x.jpg">
+                                <div class="video-title">ID</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B9j6lQ0YiH1nbWR0QTNRZE90QTA" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/it@2x.jpg">
+                                <div class="video-title">IT</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B9j6lQ0YiH1nVFhSUTRMSWc3MUE" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/kr@2x.jpg">
+                                <div class="video-title">KR</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B9j6lQ0YiH1neElGbWNCN25wTEU" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/no@2x.jpg">
+                                <div class="video-title">NO</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B9j6lQ0YiH1nQktGRjVJWjBzU0U" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/pt@2x.jpg">
+                                <div class="video-title">PT</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B9j6lQ0YiH1nTkwwVFNhbXFUMnc" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/ru@2x.jpg">
+                                <div class="video-title">RU</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B9j6lQ0YiH1nMmJIaXp2WWdNX2s" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/se@2x.jpg">
+                                <div class="video-title">SE</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B9j6lQ0YiH1nRG1NSTNQSzkzaFE" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/tr@2x.jpg">
+                                <div class="video-title">TR</div>
+                            </div>
+                        </a>
+                    </div>
+                </div> -->
+                <!-- GIF -->
+                <!-- <div class="row open-lang" id="gif-banner-block">
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B3XHJWct21NxanNHbjFJMU9hX2M" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/en@2x.jpg">
+                                <div class="video-title">EN</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B3XHJWct21NxazZxdlF4eGZlR2c" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/de@2x.jpg">
+                                <div class="video-title">DE</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B3XHJWct21NxRjNXeG5qcl9EY3M" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/es@2x.jpg">
+                                <div class="video-title">ES</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B3XHJWct21Nxc3FabzJEbXo4bEE" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/id@2x.jpg">
+                                <div class="video-title">ID</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B3XHJWct21NxamZKbTRqdVBfUmM" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/it@2x.jpg">
+                                <div class="video-title">IT</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B3XHJWct21NxS2JWZUs4TlBWU3M" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/pt@2x.jpg">
+                                <div class="video-title">PT</div>
+                            </div>
+                        </a>
+                    </div>
+                </div> -->
+                <!-- DESKTOP -->
+                <div class="row open-lang" id="desktop-banner-block">
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B9j6lQ0YiH1nYmI4T010b19rclU" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/en@2x.jpg">
+                                <div class="video-title">EN</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B-D5qFkmeAIfaXJKRUV4QTI3Z1E" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/ar@2x.png">
+                                <div class="video-title">AR</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B9j6lQ0YiH1nWFBYcTI0akh6RWs" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/cn@2x.jpg">
+                                <div class="video-title">CN</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B9j6lQ0YiH1nc2JHS04wRlp1SnM" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/de@2x.jpg">
+                                <div class="video-title">DE</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B9j6lQ0YiH1nTHBTVDZyY2puTzg" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/es@2x.jpg">
+                                <div class="video-title">ES</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B9j6lQ0YiH1nQVRfdnNBQUt6d2s" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/fr@2x.jpg">
+                                <div class="video-title">FR</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B9j6lQ0YiH1nQm5TSzRBVHZPZGc" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/id@2x.jpg">
+                                <div class="video-title">ID</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B9j6lQ0YiH1ndXgtSVhwVmY1clU" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/it@2x.jpg">
+                                <div class="video-title">IT</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B9j6lQ0YiH1nWkFMT25tdWtpcFU" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/kr@2x.jpg">
+                                <div class="video-title">KR</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B9j6lQ0YiH1nS1R0bVMzWTJwU2s" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/no@2x.jpg">
+                                <div class="video-title">NO</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B9j6lQ0YiH1nNEpMUjZQdGhpVG8" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/pt@2x.jpg">
+                                <div class="video-title">PT</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B-D5qFkmeAIfUXJHSUN5OXNWYUE" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/ru@2x.jpg">
+                                <div class="video-title">RU</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B9j6lQ0YiH1nQkhLMS1NV0Exd0U" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/se@2x.jpg">
+                                <div class="video-title">SE</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-xs-6">
+                        <a href="https://drive.google.com/open?id=0B-D5qFkmeAIfMTN2NTRSc1g0a2c" target="_blank">
+                            <div class="panel video-block">
+                                <img class="video-image" src="assets/images/flags/th@2x.png">
+                                <div class="video-title">TH</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- /content area -->
+        </div>
+        <!-- /content wrapper -->
+    </div>
+    <!-- /page content -->
+</div>
+<!-- /page container -->
+</body>
+
+</html>

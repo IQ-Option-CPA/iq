@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="11px" viewBox="0 0 16 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Header_menu" transform="translate(-271.000000, -239.000000)">
+            <g id="Language+News" transform="translate(186.000000, 186.000000)">
+                <g id="russia-copy-3" transform="translate(85.000000, 53.000000)">
+                    <g id="Group">
+                        <path d="M1,10 L15,10 L15,1 L1,1 L1,10 Z M0,0 L16,0 L16,11 L0,11 L0,0 Z" id="Rectangle-2" fill="#ECEEF4"></path>
+                        <rect id="Rectangle-path" fill="#FFFFFF" x="0.888888889" y="0.846153846" width="14.2222222" height="4.65384615"></rect>
+                        <rect id="Rectangle-path" fill="#D52B1E" x="0.888888889" y="5.5" width="14.2222222" height="4.65384615"></rect>
+                        <rect id="Rectangle-path" fill="#0039A6" x="0.888888889" y="3.94871795" width="14.2222222" height="3.1025641"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

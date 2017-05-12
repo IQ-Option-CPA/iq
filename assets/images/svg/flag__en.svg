@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="11px" viewBox="0 0 16 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>united-kingdom</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Header_menu" transform="translate(-219.000000, -289.000000)">
+            <g id="Language+News" transform="translate(186.000000, 186.000000)">
+                <g id="united-kingdom" transform="translate(33.000000, 103.000000)">
+                    <path d="M1,10 L15,10 L15,1 L1,1 L1,10 Z M0,0 L16,0 L16,11 L0,11 L0,0 Z" id="Rectangle-2" fill="#ECEEF4"></path>
+                    <polygon id="Shape" fill="#00247D" points="1 1 1 10 15 10 15 1"></polygon>
+                    <polygon id="Shape" fill="#FFFFFF" points="1 10 2.34 10 8 6.37428571 13.66 10 15 10 15 9.12571429 9.34 5.5 15 1.87428571 15 1 13.66 1 8 4.62571429 2.34 1 1 1 1 1.87428571 6.66 5.5 1 9.12571429"></polygon>
+                    <path d="M1,1 L15,10 M15,1 L1,10" id="Shape" fill="#000000"></path>
+                    <polygon id="Shape" points="8 5.5 15 5.5 15 10 8 10 1 10 1 5.5 1 1 8 1 15 1"></polygon>
+                    <path d="M1,1 L15,10 M15,1 L1,10" id="Shape" fill="#000000"></path>
+                    <polygon id="Shape" fill="#CF142B" points="14.1 10 8 6.06571429 1.9 10 1 10 1 9.43428571 7.1 5.5 1 1.56571429 1 1 1.9 1 8 4.93428571 14.1 1 15 1 15 1.56571429 8.9 5.5 15 9.43428571 15 10"></polygon>
+                    <g id="Group" transform="translate(1.000000, 1.000000)">
+                        <path d="M7,0 L7,9 M0,4.5 L14,4.5" id="Shape" fill="#000000"></path>
+                        <polygon id="Shape" fill="#FFFFFF" points="8 9 6 9 6 5.78571429 0 5.78571429 0 3.21428571 6 3.21428571 6 0 8 0 8 3.21428571 14 3.21428571 14 5.78571429 8 5.78571429"></polygon>
+                    </g>
+                    <g id="Group" transform="translate(1.000000, 1.000000)">
+                        <path d="M7,0 L7,9 M0,4.5 L14,4.5" id="Shape" fill="#000000"></path>
+                        <polygon id="Shape" fill="#CF142B" points="7.6 9 6.4 9 6.4 5.27142857 0 5.27142857 0 3.72857143 6.4 3.72857143 6.4 0 7.6 0 7.6 3.72857143 14 3.72857143 14 5.27142857 7.6 5.27142857"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
